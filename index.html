@@ -1,0 +1,1467 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aravind Ganipisetty | Portfolio</title>
+  <meta name="description" content="Aravind Ganipisetty — Python | AI/ML | Cybersecurity | Projects & Experience" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1a2e;
+      --card:#111f38;
+      --text:#e7eefc;
+      --muted:#b5c3e5;
+      --line:rgba(231,238,252,.12);
+      --accent:#79a6ff;
+      --accent2:#5eead4;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --radius2: 12px;
+      --max: 1080px;
+
+      /* glow */
+      --glowA: rgba(121,166,255,.22);
+      --glowB: rgba(94,234,212,.18);
+
+      /* ✅ scroll offset */
+      --headerH: 78px;
+      --scrollPad: 120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
+
+    html{
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--scrollPad);
+    }
+    section{ scroll-margin-top: var(--scrollPad); }
+
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 10% -10%, rgba(121,166,255,.25), transparent 60%),
+                  radial-gradient(1000px 600px at 90% 10%, rgba(94,234,212,.18), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* Layout */
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 64px; }
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      height: var(--headerH);
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      height: var(--headerH);
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .avatar{
+      width:44px; height:44px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(121,166,255,.95), rgba(94,234,212,.9));
+      box-shadow: var(--shadow);
+      flex: 0 0 auto;
+    }
+    .brand h1{
+      font-size: 14px; margin:0; letter-spacing:.3px;
+    }
+    .brand p{
+      margin:0; font-size: 12px; color: var(--muted);
+    }
+    .navlinks{
+      display:flex; flex-wrap:wrap;
+      gap: 10px;
+      justify-content:flex-end;
+    }
+    .navlinks a{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .navlinks a:hover{
+      color: var(--text);
+      border-color: var(--line);
+      text-decoration:none;
+      background: rgba(255,255,255,.03);
+    }
+    .navlinks a.active{
+      color: var(--text);
+      border-color: rgba(121,166,255,.35);
+      background: linear-gradient(135deg, rgba(121,166,255,.18), rgba(94,234,212,.08));
+      box-shadow: 0 0 0 3px rgba(121,166,255,.10);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 26px 0 10px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:start;
+    }
+
+    .heroCard{
+      background: linear-gradient(180deg, rgba(17,31,56,.78), rgba(15,26,46,.78));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      cursor: pointer;
+      isolation:isolate;
+      transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+
+    .heroCard:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(900px 520px at 45% 55%, rgba(121,166,255,.30), transparent 60%),
+        radial-gradient(720px 420px at 70% 30%, rgba(94,234,212,.18), transparent 62%),
+        radial-gradient(520px 320px at 25% 35%, rgba(255,255,255,.06), transparent 70%);
+      pointer-events:none;
+      z-index:0;
+      opacity:.9;
+    }
+    .heroCard:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), transparent 45%);
+      opacity:.55;
+      pointer-events:none;
+      z-index:0;
+    }
+    .heroInner{ position:relative; z-index:1; }
+
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      background: rgba(255,255,255,.03);
+    }
+    .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(94,234,212,.12);
+    }
+    .heroTitle{
+      margin: 14px 0 8px;
+      font-size: 34px;
+      line-height:1.15;
+      letter-spacing:-.6px;
+    }
+    .heroSub{
+      margin:0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 70ch;
+    }
+    .ctaRow{
+      display:flex; flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      transition: transform .12s ease, filter .2s ease, border-color .2s ease;
+    }
+    .btn.primary{
+      border-color: rgba(121,166,255,.35);
+      background: linear-gradient(135deg, rgba(121,166,255,.22), rgba(94,234,212,.10));
+    }
+    .btn:hover{ text-decoration:none; filter: brightness(1.08); transform: translateY(-1px); }
+
+    .miniGrid{
+      display:grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 12px;
+    }
+    .mini{
+      background: rgba(17,31,56,.65);
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      padding: 14px;
+      position:relative;
+      overflow:hidden;
+      cursor:pointer;
+      isolation:isolate;
+      transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .mini:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(300px 220px at var(--mx, 50%) var(--my, 40%), rgba(121,166,255,.18), transparent 60%),
+        radial-gradient(260px 200px at var(--mx, 50%) var(--my, 40%), rgba(94,234,212,.12), transparent 65%);
+      opacity:0;
+      transition: opacity .2s ease;
+      pointer-events:none;
+      z-index:0;
+    }
+    .mini:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 55%);
+      opacity:.5;
+      pointer-events:none;
+      z-index:0;
+    }
+    .mini > *{ position:relative; z-index:1; }
+
+    .mini:hover:before{ opacity:1; }
+
+    .mini h3{
+      margin:0 0 6px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing:.3px;
+      text-transform: uppercase;
+    }
+    .mini p{ margin:0; font-size: 14px; color: var(--text); }
+
+    /* Sections */
+    section{ padding: 18px 0; }
+    .sectionTitle{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+      margin: 14px 0 10px;
+    }
+    .sectionTitle h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing:.2px;
+    }
+    .sectionTitle span{
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .card{
+      grid-column: span 6;
+      background: rgba(17,31,56,.65);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.28);
+      position:relative;
+      overflow:hidden;
+      transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease, filter .2s ease;
+      isolation:isolate;
+
+      --bcol: rgba(121,166,255,.28);
+      --g1: rgba(121,166,255,.22);
+      --g2: rgba(94,234,212,.18);
+
+      cursor:pointer;
+    }
+    .card.full{ grid-column: span 12; }
+
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(320px 220px at var(--mx, 50%) var(--my, 50%), var(--g1), transparent 60%),
+        radial-gradient(260px 200px at var(--mx, 50%) var(--my, 50%), var(--g2), transparent 65%);
+      opacity:0;
+      transition: opacity .2s ease;
+      pointer-events:none;
+      z-index:0;
+    }
+    .card:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 45%);
+      opacity:.55;
+      pointer-events:none;
+      z-index:0;
+    }
+    .card > *{ position:relative; z-index:1; }
+
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: var(--bcol);
+      box-shadow: 0 16px 38px rgba(0,0,0,.42);
+      filter: brightness(1.05);
+    }
+    .card:hover:before{ opacity: 1; }
+
+    /* ✅ selected state (stays after click) */
+    .card.selected{
+  border: 1px solid rgba(121,166,255,.75) !important;
+
+  box-shadow:
+    0 0 0 3px rgba(121,166,255,.40),
+    0 0 35px rgba(121,166,255,.45),
+    0 0 70px rgba(94,234,212,.25),
+    0 25px 80px rgba(0,0,0,.75) !important;
+
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+}
+
+.card.selected:before{
+  opacity: 1 !important;
+  background:
+    radial-gradient(600px 400px at var(--mx, 50%) var(--my, 50%),
+      rgba(121,166,255,.55),
+      transparent 60%),
+    radial-gradient(500px 300px at var(--mx, 50%) var(--my, 50%),
+      rgba(94,234,212,.35),
+      transparent 65%);
+}
+
+.card.selected:after{
+  opacity: 1 !important;
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.10),
+      rgba(255,255,255,.03) 40%,
+      transparent 75%);
+}
+
+    .mini.selected{
+  border: 1px solid rgba(121,166,255,.75) !important;
+
+  box-shadow:
+    0 0 0 3px rgba(121,166,255,.40),
+    0 0 30px rgba(121,166,255,.45),
+    0 18px 50px rgba(0,0,0,.70) !important;
+
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+.mini.selected:before{
+  opacity:1 !important;
+  background:
+    radial-gradient(350px 250px at var(--mx, 50%) var(--my, 50%),
+      rgba(121,166,255,.55),
+      transparent 65%);
+}
+.heroCard.selected{
+  border: 1px solid rgba(121,166,255,.80) !important;
+
+  box-shadow:
+    0 0 0 4px rgba(121,166,255,.45),
+    0 0 60px rgba(121,166,255,.55),
+    0 0 120px rgba(94,234,212,.30),
+    0 30px 90px rgba(0,0,0,.80) !important;
+
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+    .card.flash{
+      border-color: var(--bcol) !important;
+      box-shadow: 0 0 0 4px rgba(255,255,255,.05), 0 18px 46px rgba(0,0,0,.55) !important;
+    }
+    .card.flash:before{ opacity: 1 !important; }
+
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing:.1px;
+    }
+    .meta{
+      display:flex; flex-wrap:wrap; gap: 8px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pill{
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    ul{ margin: 10px 0 0; padding-left: 18px; color: var(--text); }
+    li{ margin: 6px 0; color: var(--muted); }
+
+    .tech{
+      display:flex; flex-wrap:wrap; gap: 8px;
+      margin-top: 12px;
+    }
+    .tag{
+      font-size: 12px;
+      color: var(--text);
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(121,166,255,.10);
+      border: 1px solid rgba(121,166,255,.20);
+      white-space:nowrap;
+    }
+
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .copyRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .copyBtn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      user-select:none;
+      transition: transform .12s ease, filter .2s ease;
+    }
+    .copyBtn:hover{ filter: brightness(1.08); transform: translateY(-1px); }
+    .copyBtn small{
+      font-weight:600;
+      color: var(--muted);
+    }
+
+    /* hero pills row */
+    .heroPills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+    .heroPill{
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(231,238,252,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 13px;
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+    }
+
+    /* certificates gallery */
+    .certRow{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .certImg{
+      width:100%;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 28px rgba(0,0,0,.38);
+      display:block;
+      cursor: zoom-in;
+    }
+    .note{
+      margin-top:10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.72);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 999;
+    }
+    .lightbox.open{ display:flex; }
+    .lightboxInner{
+      max-width: min(1100px, 96vw);
+      max-height: 92vh;
+      border-radius: 14px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 20px 60px rgba(0,0,0,.6);
+      background: rgba(15,26,46,.9);
+      position:relative;
+    }
+    .lightboxInner img{
+      width:100%;
+      height:auto;
+      display:block;
+      max-height: 92vh;
+      object-fit: contain;
+      background: #0b1220;
+    }
+    .lbClose{
+      position:absolute;
+      top:10px;
+      right:10px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.35);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 8px 10px;
+      cursor:pointer;
+      font-weight: 800;
+    }
+    .lbClose:hover{ filter: brightness(1.1); }
+
+    /* Section color themes */
+    #about{ --bcol: rgba(121,166,255,.34); --g1: rgba(121,166,255,.25); --g2: rgba(94,234,212,.14); }
+    #skills{ --bcol: rgba(94,234,212,.30); --g1: rgba(94,234,212,.18); --g2: rgba(121,166,255,.12); }
+    #projects{ --bcol: rgba(255,184,77,.30); --g1: rgba(255,184,77,.22); --g2: rgba(121,166,255,.10); }
+    #publications{ --bcol: rgba(167,139,250,.32); --g1: rgba(167,139,250,.20); --g2: rgba(94,234,212,.10); }
+    #experience{ --bcol: rgba(59,130,246,.32); --g1: rgba(59,130,246,.18); --g2: rgba(94,234,212,.10); }
+    #volunteering{ --bcol: rgba(34,197,94,.30); --g1: rgba(34,197,94,.18); --g2: rgba(121,166,255,.10); }
+    #certifications{ --bcol: rgba(236,72,153,.28); --g1: rgba(236,72,153,.18); --g2: rgba(94,234,212,.10); }
+    #achievements{ --bcol: rgba(245,158,11,.30); --g1: rgba(245,158,11,.20); --g2: rgba(121,166,255,.10); }
+    #activities{ --bcol: rgba(20,184,166,.30); --g1: rgba(20,184,166,.18); --g2: rgba(167,139,250,.10); }
+    #contact{ --bcol: rgba(148,163,184,.30); --g1: rgba(148,163,184,.18); --g2: rgba(121,166,255,.10); }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      :root{ --headerH: 72px; --scrollPad: 122px; }
+      .hero{ grid-template-columns: 1fr; }
+      .miniGrid{ grid-template-columns: 1fr; }
+      .card{ grid-column: span 12; }
+      .twoCol{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+      .certRow{ grid-template-columns: 1fr; }
+    }
+
+    /* Print */
+    @media print{
+      header{ position: static; backdrop-filter:none; background: none; border:0; height:auto; }
+      .btn,.copyBtn,.lightbox{ display:none !important; }
+      body{ background:#fff; color:#111; }
+      .heroCard,.card,.mini{ box-shadow:none; }
+      .heroCard,.card,.mini{ background:#fff; border:1px solid #ddd; }
+      .tag,.pill{ border-color:#ddd; background:#f7f7f7; color:#111; }
+      .heroSub,.meta,li,footer,.note{ color:#333; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Nav -->
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1>Aravind Ganipisetty</h1>
+          <p>He/Him • Python • AI/ML • Cybersecurity</p>
+        </div>
+      </div>
+
+      <div class="navlinks" id="navlinks">
+        <a href="#about" data-link="about">About</a>
+        <a href="#skills" data-link="skills">Skills</a>
+        <a href="#projects" data-link="projects">Projects</a>
+        <a href="#publications" data-link="publications">Publications</a>
+        <a href="#experience" data-link="experience">Experience</a>
+        <a href="#volunteering" data-link="volunteering">Volunteering</a>
+        <a href="#certifications" data-link="certifications">Certifications</a>
+        <a href="#achievements" data-link="achievements">Achievements</a>
+        <a href="#activities" data-link="activities">Activities</a>
+        <a href="#contact" data-link="contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="heroCard" id="heroCard">
+        <div class="heroInner">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Actively looking for Summer Internships</div>
+
+          <h2 class="heroTitle">Aravind Ganipisetty</h2>
+          <p class="heroSub">
+            Master’s in Computer and Information Science • Building practical projects with Python, data tools, and security fundamentals.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="mailto:aravindganipisetty@gmail.com">Email</a>
+            <a class="btn" href="tel:+12034107376">Call</a>
+          </div>
+
+          <div class="copyRow">
+            <div class="copyBtn" data-copy="aravindganipisetty@gmail.com" title="Click to copy email">
+              📧 <span>Email</span> <small>copy</small>
+            </div>
+            <div class="copyBtn" data-copy="+1203-410-7376" title="Click to copy phone">
+              📞 <span>Phone</span> <small>copy</small>
+            </div>
+            <a class="copyBtn" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer" title="Open GitHub">
+              🧑‍💻 <span>GitHub</span> <small>open</small>
+            </a>
+          </div>
+
+          <div class="heroPills" aria-label="Quick highlights">
+            <span class="heroPill">Automation-first</span>
+            <span class="heroPill">Computer Vision</span>
+            <span class="heroPill">Security-aware</span>
+            <span class="heroPill">Leadership</span>
+            <span class="heroPill">IEEE Publication</span>
+          </div>
+
+          <p class="note">
+            To display the IBM certificate image, save it as <b>ibm-python-certificate.jpg</b> in the same folder as this HTML file.
+          </p>
+        </div>
+      </div>
+
+      <div class="miniGrid">
+        <div class="mini">
+          <h3>Headline</h3>
+          <p>Masters in Computer and Information Science || C || Python (pandas, numpy) || SQL || HTML || CSS || Java (fundamentals) || Power BI || GitHub</p>
+        </div>
+        <div class="mini">
+          <h3>Focus Areas</h3>
+          <p>Python Automation • Data Analysis • Computer Vision • Cybersecurity Fundamentals • AI/LLM Workflows</p>
+        </div>
+        <div class="mini">
+          <h3>Strength</h3>
+          <p>End-to-end projects: build → automate → generate outputs people can use.</p>
+        </div>
+        <div class="mini">
+          <h3>Proof</h3>
+          <p>Projects, internships, leadership roles, certificates, and an IEEE publication.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sectionTitle">
+        <h2>About</h2>
+        <span>Short and verifiable</span>
+      </div>
+      <div class="card full">
+        <p style="margin:0;color:var(--muted);">
+          I’m <b>Aravind Ganipisetty (He/Him)</b>, currently pursuing a <b>Master’s in Computer and Information Science</b>.
+          I build practical systems in <b>Python</b> and focus on <b>automation</b>, <b>data tools</b>, <b>computer vision</b>, and <b>security-aware development</b>.
+          I learn by building, documenting, and improving real projects on GitHub, and by completing structured programs (Microsoft Learn, IBM, NVIDIA, Cisco, NPTEL, Coursera).
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="sectionTitle">
+        <h2>Skills</h2>
+        <span>What I can actually use</span>
+      </div>
+
+      <div class="twoCol">
+        <div class="card">
+          <h3>Programming</h3>
+          <div class="tech">
+            <span class="tag">Python</span>
+            <span class="tag">C</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Java (fundamentals)</span>
+            <span class="tag">Embedded C (basics)</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Libraries & Tools</h3>
+          <div class="tech">
+            <span class="tag">pandas</span>
+            <span class="tag">numpy</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">GitHub</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Web</h3>
+          <div class="tech">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">PHP (basics)</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Domains</h3>
+          <div class="tech">
+            <span class="tag">Automation</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Cybersecurity Fundamentals</span>
+            <span class="tag">Networking Basics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="sectionTitle">
+        <h2>Projects</h2>
+        <span>Outcomes > long posts</span>
+      </div>
+
+      <div class="grid">
+        <article class="card full">
+          <h3>Face Recognition–Based Attendance System</h3>
+          <div class="meta">
+            <span class="pill">Python</span>
+            <span class="pill">OpenCV</span>
+            <span class="pill">Automation</span>
+            <span class="pill">Excel / CSV</span>
+          </div>
+
+          <p style="margin:0;color:var(--muted);">
+            Real-time webcam face recognition that logs attendance with timestamps, auto-generates reports (CSV/TXT/Excel),
+            emails the report, and triggers a WhatsApp confirmation notification after successful delivery.
+          </p>
+
+          <ul>
+            <li>Real-time detection & recognition workflow using webcam input</li>
+            <li>Automated attendance logging with timestamp + report generation</li>
+            <li>Email automation + WhatsApp notification as final step</li>
+          </ul>
+
+          <div class="ctaRow" style="margin-top:14px;">
+            <a class="btn primary" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer">GitHub (Profile)</a>
+          </div>
+        </article>
+
+        <article class="card full">
+          <h3>Python Turtle Graphics — Creative Coding Series</h3>
+          <div class="meta">
+            <span class="pill">Python</span>
+            <span class="pill">Turtle</span>
+            <span class="pill">Math/Geometry</span>
+            <span class="pill">Clean code</span>
+          </div>
+
+          <p style="margin:0;color:var(--muted);">
+            Built a collection of visual programs (hearts, flowers, stars, spirals, rosettes, radial burst patterns) using loops,
+            functions, angles, and coordinate logic—focused on strengthening programming fundamentals through geometry.
+          </p>
+
+          <ul>
+            <li>Demonstrates control flow, modular functions, and coordinate reasoning</li>
+            <li>Mathematical patterns + symmetry built purely with Python logic</li>
+            <li>Learning approach: implement myself, use AI only to clarify concepts</li>
+          </ul>
+
+          <div class="ctaRow" style="margin-top:14px;">
+            <a class="btn primary" href="https://lnkd.in/eB-_hv3B" target="_blank" rel="noreferrer">Project Code Link</a>
+            <a class="btn" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card full">
+          <h3>Blood Donor Information System Website</h3>
+          <div class="meta">
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">PHP</span>
+            <span class="pill">MySQL</span>
+          </div>
+
+          <p style="margin:0;color:var(--muted);">
+            Website that stores and manages blood donor information to help acceptors quickly find donors.
+            Built to connect donors and acceptors through a searchable database-backed interface.
+          </p>
+
+          <ul>
+            <li>Database-backed donor directory using MySQL</li>
+            <li>Web UI built with HTML/CSS and server-side PHP</li>
+            <li>Goal: reduce friction in finding eligible donors</li>
+          </ul>
+        </article>
+
+        <article class="card full">
+          <h3>Fall Detection & Protection by Airbag System (Project + Publication)</h3>
+          <div class="meta">
+            <span class="pill">Arduino</span>
+            <span class="pill">Embedded C</span>
+            <span class="pill">Sensors</span>
+            <span class="pill">IEEE Publication</span>
+          </div>
+
+          <p style="margin:0;color:var(--muted);">
+            Designed and implemented a wearable airbag system for elderly safety. An accelerometer detects a fall (threshold logic),
+            then an Arduino triggers a solenoid valve to deploy an airbag using compressed air to reduce injury impact.
+          </p>
+
+          <div class="tech">
+            <span class="tag">Accelerometer</span>
+            <span class="tag">Threshold detection</span>
+            <span class="tag">Solenoid valve</span>
+            <span class="tag">Compressed air deployment</span>
+            <span class="tag">Safety engineering</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <div class="sectionTitle">
+        <h2>Publications</h2>
+        <span>Peer-reviewed proof</span>
+      </div>
+
+      <div class="card full">
+        <h3>Enhancing Fall Protection for the Elderly: A Wearable Airbag System for Safety</h3>
+        <div class="meta">
+          <span class="pill">IEEE</span>
+          <span class="pill">ICOECA 2024</span>
+          <span class="pill">Apr 15, 2024</span>
+        </div>
+        <p style="margin:0;color:var(--muted);">
+          Falls are a major cause of injuries in older adults. This work combines <b>fall detection</b> (accelerometer + thresholds)
+          with <b>active protection</b> (rapid airbag deployment) using an Arduino-controlled solenoid valve and compressed air.
+        </p>
+        <div class="tech" style="margin-top:12px;">
+          <span class="tag">Wearable Tech</span>
+          <span class="tag">Elderly Care</span>
+          <span class="tag">Sensors</span>
+          <span class="tag">Arduino</span>
+          <span class="tag">Embedded Systems</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="sectionTitle">
+        <h2>Experience</h2>
+        <span>Keep it defensible</span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>AI & Machine Learning Intern — R Techno Solutions</h3>
+          <div class="meta">
+            <span class="pill">Dec 2023 – Mar 2024</span>
+            <span class="pill">Remote</span>
+          </div>
+          <ul>
+            <li>Worked with Python and AI/ML fundamentals through practical exercises.</li>
+            <li>Strengthened problem-solving and applied learning using hands-on tasks.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Cybersecurity Virtual Intern — EduSkills & Palo Alto Networks (AICTE–NEAT)</h3>
+          <div class="meta">
+            <span class="pill">May 2023 – Jul 2023</span>
+            <span class="pill">Remote</span>
+          </div>
+          <ul>
+            <li>Completed structured training on network security, threats, and security best practices.</li>
+            <li>Built a strong base in SOC, cloud security, and network security fundamentals.</li>
+          </ul>
+        </article>
+
+        <article class="card full">
+          <h3>Design Verification Training — SystemVerilog & UVM (Cranes Varsity)</h3>
+          <div class="meta">
+            <span class="pill">13–17 Mar 2023</span>
+            <span class="pill">5-Day Program</span>
+            <span class="pill">VLSI / Verification</span>
+          </div>
+          <p style="margin:0;color:var(--muted);">
+            Completed a structured training program covering fundamentals of design verification using SystemVerilog and UVM.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Volunteering -->
+    <section id="volunteering">
+      <div class="sectionTitle">
+        <h2>Volunteering & Leadership</h2>
+        <span>Leadership signals</span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Student Chair Person — IEEE (VRSEC)</h3>
+          <div class="meta">
+            <span class="pill">Feb 2023 – Apr 2024</span>
+            <span class="pill">Science & Technology</span>
+          </div>
+          <ul>
+            <li>Led and organized technical and non-technical events and webinars.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Office Member / Executive Member — ISTE & IETE (VRSEC)</h3>
+          <div class="meta">
+            <span class="pill">Mar 2021 – Apr 2024</span>
+            <span class="pill">Science & Technology</span>
+          </div>
+          <ul>
+            <li>Supported and conducted departmental technical and non-technical events.</li>
+            <li>Active participation across IEEE, ISTE, and IETE student communities.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Coordinator — National Service Scheme (VRSEC)</h3>
+          <div class="meta">
+            <span class="pill">Jul 2021 – Sep 2023</span>
+            <span class="pill">Social Service</span>
+          </div>
+          <ul>
+            <li>Participated in social activities and encouraged peers/juniors to join events.</li>
+            <li>Coordinated participation and awareness activities over multiple semesters.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Tutor — OUR STUDY CIRCLE</h3>
+          <div class="meta">
+            <span class="pill">Jul 2020 – Aug 2023</span>
+            <span class="pill">Education</span>
+          </div>
+          <ul>
+            <li>Tutored students from AP/Telangana preparing for engineering entrance exams.</li>
+            <li>Focused on helping economically challenged students access quality guidance.</li>
+          </ul>
+        </article>
+
+        <article class="card full">
+          <h3>District Coordinator — RAKTHDANAM (Blood Donation Awareness)</h3>
+          <div class="meta">
+            <span class="pill">Jul 2020 – Mar 2024</span>
+            <span class="pill">Health</span>
+          </div>
+          <ul>
+            <li>Spread awareness about blood donation in Andhra Pradesh.</li>
+            <li>Helped people use the organization’s website (account creation + usage guidance).</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+      <div class="sectionTitle">
+        <h2>Certifications & Badges</h2>
+        <span>Grouped (so it’s not overwhelming)</span>
+      </div>
+
+      <div class="grid">
+        <div class="card full">
+          <h3>IBM PY0101EN — Python 101 for Data Science</h3>
+          <div class="meta">
+            <span class="pill">IBM Developer Skills Network</span>
+            <span class="pill">Cognitive Class</span>
+          </div>
+
+          <div class="certRow">
+            <div>
+              <p style="margin:0;color:var(--muted);">
+                Strengthened core Python foundations and data handling skills for data science workflows:
+                variables, data types, control flow, OOP, file handling, Pandas, NumPy, and working with APIs.
+              </p>
+
+              <ul>
+                <li>Python data types, expressions, and variables</li>
+                <li>Lists, tuples, sets, and dictionaries</li>
+                <li>Loops, functions, and object-oriented programming concepts</li>
+                <li>File handling + data analysis with Pandas</li>
+                <li>NumPy arrays and accessing simple APIs</li>
+              </ul>
+
+              <p class="note">
+                ✅ Put the certificate image file in the same folder:
+                <b>ibm-python-certificate.jpg</b>. Click image to zoom.
+              </p>
+            </div>
+
+            <div>
+              <img
+                class="certImg"
+                src="ibm-python-certificate.jpg"
+                alt="IBM PY0101EN Python 101 for Data Science Certificate"
+                data-zoom="ibm-python-certificate.jpg"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Microsoft Learn</h3>
+          <ul>
+            <li>Introduction to Generative AI and Agents</li>
+            <li>NLP in Azure (Get started with NLP in Azure)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>NVIDIA</h3>
+          <ul>
+            <li>Building LLM Applications with Prompt Engineering</li>
+            <li>Prompt templates • LangChain/LCEL • Runnable functions • Parallel chains</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Cisco Networking Academy</h3>
+          <ul>
+            <li>CCNAv7: Switching, Routing, and Wireless Essentials</li>
+            <li>Networking Essentials</li>
+            <li>IoT Fundamentals: Connecting Things</li>
+            <li>CPA: Programming Essentials in C++</li>
+            <li>PCAP: Programming Essentials in Python</li>
+            <li>Cybersecurity Essentials</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Palo Alto Networks (via EduSkills)</h3>
+          <ul>
+            <li>The Fundamentals of SOC (Certification)</li>
+            <li>The Fundamentals of SOC — Assessment (Score: 100)</li>
+            <li>Fundamentals of Network Security</li>
+            <li>Fundamentals of Cloud Security</li>
+            <li>Introduction to Cybersecurity</li>
+          </ul>
+        </div>
+
+        <div class="card full">
+          <h3>NPTEL (SWAYAM)</h3>
+          <ul>
+            <li>Privacy and Security in Online Social Media (Jan–Apr 2023)</li>
+            <li>Data Science for Engineers (IIT Madras)</li>
+            <li>Introduction to Machine Learning (IIT Madras, Jul–Oct 2022)</li>
+            <li>Cloud Computing (IIT Kharagpur)</li>
+          </ul>
+        </div>
+
+        <div class="card full">
+          <h3>Coursera (University of Colorado Boulder + UC San Diego)</h3>
+          <ul>
+            <li>Embedding Sensors and Motors (Specialization)</li>
+            <li>Pressure, Force, Motion, and Humidity Sensors</li>
+            <li>Sensor Manufacturing and Process Control</li>
+            <li>Motors and Motor Control Circuits</li>
+            <li>Sensors and Sensor Circuit Design</li>
+            <li>Object Oriented Programming in Java</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+      <div class="sectionTitle">
+        <h2>Achievements</h2>
+        <span>Selected highlights</span>
+      </div>
+
+      <div class="grid">
+        <div class="card full">
+          <h3>First Prize — Project Expo (Fall Detection and Protection by Airbag System)</h3>
+          <div class="meta">
+            <span class="pill">Feb 2024</span>
+            <span class="pill">VRSEC</span>
+          </div>
+          <p style="margin:0;color:var(--muted);">
+            Designed and implemented a fall detection + protection solution for elderly safety, combining sensing + rapid airbag deployment.
+          </p>
+        </div>
+
+        <div class="card full">
+          <h3>Perfect Score — SOC Fundamentals Assessment (Palo Alto Networks)</h3>
+          <div class="meta">
+            <span class="pill">Score: 100</span>
+            <span class="pill">2000 Gold</span>
+            <span class="pill">Jul 15, 2023</span>
+          </div>
+          <p style="margin:0;color:var(--muted);">
+            Demonstrated strong understanding of Security Operations Center fundamentals.
+          </p>
+        </div>
+
+        <!-- Essay Writing Achievement -->
+<div class="card full">
+  <h3>Essay Writing — District Level</h3>
+  <div class="meta">
+    <span class="pill">District Level</span>
+    <span class="pill">Achievement</span>
+  </div>
+  <ul>
+    <li>Secured Second Prize in district-level essay writing competition.</li>
+    <li>Recognized for structured thinking and communication skills.</li>
+  </ul>
+</div>
+
+<!-- Academic Rank Achievement -->
+<div class="card full">
+  <h3>Academic Rank — VRSEC</h3>
+  <div class="meta">
+    <span class="pill">VRSEC</span>
+    <span class="pill">Academic Excellence</span>
+  </div>
+  <ul>
+    <li>Secured Second Branch Rank twice during undergraduate studies.</li>
+    <li>Maintained consistent academic performance across semesters.</li>
+  </ul>
+</div>
+
+      </div>
+    </section>
+
+    <!-- Activities -->
+    <section id="activities">
+      <div class="sectionTitle">
+        <h2>Activities</h2>
+        <span>Learning, innovation, and collaboration</span>
+      </div>
+
+      <div class="grid">
+        <div class="card full">
+          <h3>Student Clubs & Department Activities — VRSEC</h3>
+          <div class="meta">
+            <span class="pill">IEEE / ISTE / IETE</span>
+            <span class="pill">Co-curricular</span>
+          </div>
+          <p style="margin:0;color:var(--muted);">
+            Participated and contributed to technical and co-curricular events through student communities and department clubs.
+          </p>
+
+          <ul>
+            <li><b>IETE Formation Day</b> — Techno Talk, Technical Quiz, Paper Presentation</li>
+            <li><b>Innovative Poster Competition</b> (Oct 2022)</li>
+            <li><b>Open Mic Event</b> (Nov 2022)</li>
+            <li><b>Extempore Competition</b> — improved public speaking & quick thinking</li>
+            <li><b>BUG CRASH Event</b> (Feb 2023) — debugging + teamwork</li>
+            <li><b>Puzzle Solving Event</b> (Aug 2022)</li>
+            <li><b>Explorika 2k22</b> (May 2022) — quiz and circuit-building competitions</li>
+          </ul>
+        </div>
+
+        <div class="card full">
+          <h3>School-Level Science & Sports Milestones</h3>
+          <div class="meta">
+            <span class="pill">2014–2016</span>
+            <span class="pill">Science Exhibitions</span>
+            <span class="pill">Sports</span>
+          </div>
+          <ul>
+            <li><b>Inspire Award Scheme (2014)</b> — District Level Science Exhibition (greenhouse environments)</li>
+            <li><b>District Science Fair (2015)</b> — represented Z.P.H. School</li>
+            <li><b>DLEPC (2016)</b> — sensors and irrigation project</li>
+            <li><b>Annual Games & Sports Meet (2015–16)</b> — Kho-Kho participation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="sectionTitle">
+        <h2>Contact</h2>
+        <span>One-click actions</span>
+      </div>
+
+      <div class="grid">
+        <div class="card full">
+          <h3>Get in touch</h3>
+          <p style="margin:0;color:var(--muted);">
+            Email or call directly. You can also copy details with one click.
+          </p>
+
+          <div class="ctaRow" style="margin-top:14px;">
+            <a class="btn primary" href="mailto:aravindganipisetty@gmail.com">aravindganipisetty@gmail.com</a>
+            <a class="btn" href="tel:+12034107376">+1 (203) 410-7376</a>
+            <a class="btn" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+
+          <div class="copyRow">
+            <div class="copyBtn" data-copy="aravindganipisetty@gmail.com">📧 Email <small>copy</small></div>
+            <div class="copyBtn" data-copy="+1203-410-7376">📞 Phone <small>copy</small></div>
+            <div class="copyBtn" data-copy="https://github.com/araWINd-AR">🧑‍💻 GitHub <small>copy</small></div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div>© <span id="y"></span> Aravind Ganipisetty</div>
+        <div><a href="#top">Back to top ↑</a></div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightboxInner" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="lbClose" id="lbClose" type="button">✕ Close</button>
+      <img id="lbImg" alt="Preview" />
+    </div>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // copy-to-clipboard
+    const copyBtns = document.querySelectorAll('[data-copy]');
+    copyBtns.forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const text = btn.getAttribute('data-copy');
+        try {
+          await navigator.clipboard.writeText(text);
+          const old = btn.innerHTML;
+          btn.innerHTML = '✅ Copied <small>done</small>';
+          setTimeout(() => (btn.innerHTML = old), 900);
+        } catch (e) {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          const old = btn.innerHTML;
+          btn.innerHTML = '✅ Copied <small>done</small>';
+          setTimeout(() => (btn.innerHTML = old), 900);
+        }
+      });
+    });
+
+    // ✅ glow position follows cursor for cards + minis
+    function setGlowXY(el, e){
+      const r = el.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width) * 100;
+      const y = ((e.clientY - r.top) / r.height) * 100;
+      el.style.setProperty('--mx', x + '%');
+      el.style.setProperty('--my', y + '%');
+    }
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', (e) => setGlowXY(card, e));
+    });
+    document.querySelectorAll('.mini').forEach(mini => {
+      mini.addEventListener('mousemove', (e) => setGlowXY(mini, e));
+    });
+
+    // ✅ persistent click select (stays until you click another)
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const minis = Array.from(document.querySelectorAll('.mini'));
+    const heroCard = document.getElementById('heroCard');
+
+    function clearSelected(){
+      cards.forEach(c => c.classList.remove('selected'));
+      minis.forEach(m => m.classList.remove('selected'));
+      if(heroCard) heroCard.classList.remove('selected');
+    }
+
+    function isInteractiveTarget(target){
+      return !!target.closest('a, button, .copyBtn, input, textarea, select, img, .lbClose');
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (isInteractiveTarget(e.target)) return;
+        clearSelected();
+        setGlowXY(card, e);
+        card.classList.add('selected');
+      });
+    });
+
+    minis.forEach(mini => {
+      mini.addEventListener('click', (e) => {
+        if (isInteractiveTarget(e.target)) return;
+        clearSelected();
+        setGlowXY(mini, e);
+        mini.classList.add('selected');
+      });
+    });
+
+    if(heroCard){
+      heroCard.addEventListener('click', (e) => {
+        if (isInteractiveTarget(e.target)) return;
+        clearSelected();
+        heroCard.classList.add('selected');
+      });
+    }
+
+    // click outside clears selection
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.card, .mini, #heroCard')) clearSelected();
+    });
+
+    // ✅ Lightbox zoom
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbClose = document.getElementById('lbClose');
+
+    function openLightbox(src){
+      lbImg.src = src;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+    }
+
+    document.querySelectorAll('[data-zoom]').forEach(img => {
+      img.addEventListener('click', () => openLightbox(img.getAttribute('data-zoom')));
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if(e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeLightbox();
+    });
+
+    // ✅ ALWAYS scroll to exact top
+    const scrollPad = () => {
+      const v = getComputedStyle(document.documentElement).getPropertyValue('--scrollPad').trim();
+      const n = parseInt(v.replace('px',''), 10);
+      return Number.isFinite(n) ? n : 120;
+    };
+
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - scrollPad();
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+
+    // ✅ click nav: force top alignment + glow section + glow nav item
+    const nav = document.getElementById('navlinks');
+    const navLinks = Array.from(nav.querySelectorAll('a[data-link]'));
+
+    function setActiveNav(id){
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('data-link') === id));
+    }
+
+    function flashSection(id){
+      const section = document.getElementById(id);
+      if(!section) return;
+      const cards = section.querySelectorAll('.card');
+      cards.forEach(c => c.classList.add('flash'));
+      setTimeout(() => cards.forEach(c => c.classList.remove('flash')), 900);
+    }
+
+    navLinks.forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = a.getAttribute('data-link');
+        history.replaceState(null, '', '#' + id);
+        setActiveNav(id);
+        scrollToSection(id);
+        setTimeout(() => flashSection(id), 350);
+      });
+    });
+
+    // ✅ highlight nav while scrolling
+    const sections = navLinks
+      .map(a => document.getElementById(a.getAttribute('data-link')))
+      .filter(Boolean);
+
+    const io = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => (b.intersectionRatio - a.intersectionRatio))[0];
+      if(visible) setActiveNav(visible.target.id);
+    }, {
+      root: null,
+      threshold: [0.25, 0.40, 0.55],
+      rootMargin: `-${scrollPad()}px 0px -55% 0px`
+    });
+
+    sections.forEach(s => io.observe(s));
+
+    // ✅ load with hash
+    window.addEventListener('load', () => {
+      const id = (location.hash || '').replace('#','');
+      if(id){
+        setActiveNav(id);
+        setTimeout(() => {
+          scrollToSection(id);
+          setTimeout(() => flashSection(id), 350);
+        }, 40);
+      }
+    });
+  </script>
+</body>
+</html>
