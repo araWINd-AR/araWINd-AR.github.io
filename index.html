@@ -202,6 +202,7 @@
       font-size: 13px;
       font-weight: 600;
       transition: transform .12s ease, filter .2s ease, border-color .2s ease;
+      cursor:pointer;
     }
     .btn.primary{
       border-color: rgba(121,166,255,.35);
@@ -247,7 +248,6 @@
       z-index:0;
     }
     .mini > *{ position:relative; z-index:1; }
-
     .mini:hover:before{ opacity:1; }
 
     .mini h3{
@@ -338,69 +338,69 @@
 
     /* ✅ selected state (stays after click) */
     .card.selected{
-  border: 1px solid rgba(121,166,255,.75) !important;
+      border: 1px solid rgba(121,166,255,.75) !important;
 
-  box-shadow:
-    0 0 0 3px rgba(121,166,255,.40),
-    0 0 35px rgba(121,166,255,.45),
-    0 0 70px rgba(94,234,212,.25),
-    0 25px 80px rgba(0,0,0,.75) !important;
+      box-shadow:
+        0 0 0 3px rgba(121,166,255,.40),
+        0 0 35px rgba(121,166,255,.45),
+        0 0 70px rgba(94,234,212,.25),
+        0 25px 80px rgba(0,0,0,.75) !important;
 
-  transform: translateY(-3px);
-  filter: brightness(1.12);
-}
+      transform: translateY(-3px);
+      filter: brightness(1.12);
+    }
 
-.card.selected:before{
-  opacity: 1 !important;
-  background:
-    radial-gradient(600px 400px at var(--mx, 50%) var(--my, 50%),
-      rgba(121,166,255,.55),
-      transparent 60%),
-    radial-gradient(500px 300px at var(--mx, 50%) var(--my, 50%),
-      rgba(94,234,212,.35),
-      transparent 65%);
-}
+    .card.selected:before{
+      opacity: 1 !important;
+      background:
+        radial-gradient(600px 400px at var(--mx, 50%) var(--my, 50%),
+          rgba(121,166,255,.55),
+          transparent 60%),
+        radial-gradient(500px 300px at var(--mx, 50%) var(--my, 50%),
+          rgba(94,234,212,.35),
+          transparent 65%);
+    }
 
-.card.selected:after{
-  opacity: 1 !important;
-  background:
-    linear-gradient(180deg,
-      rgba(255,255,255,.10),
-      rgba(255,255,255,.03) 40%,
-      transparent 75%);
-}
+    .card.selected:after{
+      opacity: 1 !important;
+      background:
+        linear-gradient(180deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.03) 40%,
+          transparent 75%);
+    }
 
     .mini.selected{
-  border: 1px solid rgba(121,166,255,.75) !important;
+      border: 1px solid rgba(121,166,255,.75) !important;
 
-  box-shadow:
-    0 0 0 3px rgba(121,166,255,.40),
-    0 0 30px rgba(121,166,255,.45),
-    0 18px 50px rgba(0,0,0,.70) !important;
+      box-shadow:
+        0 0 0 3px rgba(121,166,255,.40),
+        0 0 30px rgba(121,166,255,.45),
+        0 18px 50px rgba(0,0,0,.70) !important;
 
-  transform: translateY(-2px);
-  filter: brightness(1.12);
-}
+      transform: translateY(-2px);
+      filter: brightness(1.12);
+    }
 
-.mini.selected:before{
-  opacity:1 !important;
-  background:
-    radial-gradient(350px 250px at var(--mx, 50%) var(--my, 50%),
-      rgba(121,166,255,.55),
-      transparent 65%);
-}
-.heroCard.selected{
-  border: 1px solid rgba(121,166,255,.80) !important;
+    .mini.selected:before{
+      opacity:1 !important;
+      background:
+        radial-gradient(350px 250px at var(--mx, 50%) var(--my, 50%),
+          rgba(121,166,255,.55),
+          transparent 65%);
+    }
+    .heroCard.selected{
+      border: 1px solid rgba(121,166,255,.80) !important;
 
-  box-shadow:
-    0 0 0 4px rgba(121,166,255,.45),
-    0 0 60px rgba(121,166,255,.55),
-    0 0 120px rgba(94,234,212,.30),
-    0 30px 90px rgba(0,0,0,.80) !important;
+      box-shadow:
+        0 0 0 4px rgba(121,166,255,.45),
+        0 0 60px rgba(121,166,255,.55),
+        0 0 120px rgba(94,234,212,.30),
+        0 30px 90px rgba(0,0,0,.80) !important;
 
-  filter: brightness(1.15);
-  transform: translateY(-2px);
-}
+      filter: brightness(1.15);
+      transform: translateY(-2px);
+    }
 
     .card.flash{
       border-color: var(--bcol) !important;
@@ -494,7 +494,7 @@
       box-shadow: 0 10px 22px rgba(0,0,0,.18);
     }
 
-    /* certificates gallery */
+    /* certificates gallery (existing) */
     .certRow{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
@@ -513,6 +513,78 @@
       margin-top:10px;
       color: var(--muted);
       font-size: 13px;
+    }
+
+    /* ✅ certificate list with "Certificate / Badge / Link" actions */
+    .certList{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .certItem{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid rgba(231,238,252,.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,.02);
+    }
+    .certLeft{ min-width: 0; }
+    .certTitle{
+      margin:0;
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing:.1px;
+    }
+    .certMeta{
+      margin: 3px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .certActions{
+      display:flex;
+      gap: 8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      flex: 0 0 auto;
+    }
+    .certAction{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(231,238,252,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 800;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .12s ease, filter .2s ease, border-color .2s ease;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .certAction:hover{
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+      text-decoration:none;
+    }
+    .certAction.badge{
+      border-color: rgba(94,234,212,.28);
+      background: linear-gradient(135deg, rgba(94,234,212,.14), rgba(121,166,255,.08));
+    }
+    .certAction.link{
+      border-color: rgba(121,166,255,.28);
+      background: linear-gradient(135deg, rgba(121,166,255,.14), rgba(94,234,212,.06));
+    }
+    .certAction.certificate{
+      border-color: rgba(236,72,153,.22);
+      background: linear-gradient(135deg, rgba(236,72,153,.12), rgba(121,166,255,.06));
     }
 
     /* Footer */
@@ -593,12 +665,14 @@
       .twoCol{ grid-template-columns: 1fr; }
       .brand{ min-width: unset; }
       .certRow{ grid-template-columns: 1fr; }
+      .certItem{ flex-direction:column; }
+      .certActions{ justify-content:flex-start; }
     }
 
     /* Print */
     @media print{
       header{ position: static; backdrop-filter:none; background: none; border:0; height:auto; }
-      .btn,.copyBtn,.lightbox{ display:none !important; }
+      .btn,.copyBtn,.lightbox,.certActions{ display:none !important; }
       body{ background:#fff; color:#111; }
       .heroCard,.card,.mini{ box-shadow:none; }
       .heroCard,.card,.mini{ background:#fff; border:1px solid #ddd; }
@@ -675,7 +749,8 @@
           </div>
 
           <p class="note">
-            To display the IBM certificate image, save it as <b>ibm-python-certificate.jpg</b> in the same folder as this HTML file.
+            ✅ Put the folder <b>cer/</b> (from your zip) in the same folder as this HTML file.
+            All certificate images are loaded from <b>cer/</b>.
           </p>
         </div>
       </div>
@@ -890,6 +965,13 @@
           Falls are a major cause of injuries in older adults. This work combines <b>fall detection</b> (accelerometer + thresholds)
           with <b>active protection</b> (rapid airbag deployment) using an Arduino-controlled solenoid valve and compressed air.
         </p>
+
+        <div class="ctaRow" style="margin-top:14px;">
+          <a class="btn primary" href="https://www.computer.org/csdl/proceedings-article/icoeca/2024/857900a505/1Za3x1pNDQA" target="_blank" rel="noreferrer">
+            Publication Link
+          </a>
+        </div>
+
         <div class="tech" style="margin-top:12px;">
           <span class="tag">Wearable Tech</span>
           <span class="tag">Elderly Care</span>
@@ -918,6 +1000,21 @@
             <li>Worked with Python and AI/ML fundamentals through practical exercises.</li>
             <li>Strengthened problem-solving and applied learning using hands-on tasks.</li>
           </ul>
+
+          <!-- ✅ Certificate button INSIDE Experience -->
+          <div class="certList">
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">AI & Machine Learning Intern certificate</p>
+                <p class="certMeta">Opens certificate image</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/AI & Machine Learning Intern certificate.jpg">
+                  🧾 Certificate
+                </button>
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="card">
@@ -930,6 +1027,21 @@
             <li>Completed structured training on network security, threats, and security best practices.</li>
             <li>Built a strong base in SOC, cloud security, and network security fundamentals.</li>
           </ul>
+
+          <!-- ✅ Certificate button INSIDE Experience -->
+          <div class="certList">
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Cybersecurity Virtual Intern certificate</p>
+                <p class="certMeta">Opens certificate image</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Cybersecurity Virtual Intern certificate.jpg">
+                  🧾 Certificate
+                </button>
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="card full">
@@ -942,6 +1054,21 @@
           <p style="margin:0;color:var(--muted);">
             Completed a structured training program covering fundamentals of design verification using SystemVerilog and UVM.
           </p>
+
+          <!-- ✅ Certificate button INSIDE Experience -->
+          <div class="certList">
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Design Verification Training</p>
+                <p class="certMeta">Opens certificate image</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Design Verification Training.jpg">
+                  🧾 Certificate
+                </button>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     </section>
@@ -1019,10 +1146,11 @@
     <section id="certifications">
       <div class="sectionTitle">
         <h2>Certifications & Badges</h2>
-        <span>Grouped (so it’s not overwhelming)</span>
+        <span>Click “Certificate / Badge / Link” (opens)</span>
       </div>
 
       <div class="grid">
+        <!-- IBM -->
         <div class="card full">
           <h3>IBM PY0101EN — Python 101 for Data Science</h3>
           <div class="meta">
@@ -1045,83 +1173,322 @@
                 <li>NumPy arrays and accessing simple APIs</li>
               </ul>
 
-              <p class="note">
-                ✅ Put the certificate image file in the same folder:
-                <b>ibm-python-certificate.jpg</b>. Click image to zoom.
-              </p>
-            </div>
-
-            <div>
-              <img
-                class="certImg"
-                src="ibm-python-certificate.jpg"
-                alt="IBM PY0101EN Python 101 for Data Science Certificate"
-                data-zoom="ibm-python-certificate.jpg"
-              />
+              <div class="certList">
+                <div class="certItem">
+                  <div class="certLeft">
+                    <p class="certTitle">IBM PY0101EN — Python 101 for Data Science</p>
+                    <p class="certMeta">Image stored locally in <b>cer/</b></p>
+                  </div>
+                  <div class="certActions">
+                    <button class="certAction certificate" type="button" data-zoom="cer/Python 101 for Data Science.jpeg">
+                      🧾 Certificate
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <!-- Microsoft Learn -->
+        <div class="card full">
           <h3>Microsoft Learn</h3>
-          <ul>
-            <li>Introduction to Generative AI and Agents</li>
-            <li>NLP in Azure (Get started with NLP in Azure)</li>
-          </ul>
+          <p style="margin:0;color:var(--muted);">
+            Verified share links (opens Microsoft Learn badge page).
+          </p>
+
+          <div class="certList">
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Introduction to Generative AI and Agents</p>
+                <p class="certMeta">Microsoft Learn • Share link</p>
+              </div>
+              <div class="certActions">
+                <a class="certAction badge" href="https://learn.microsoft.com/api/achievements/share/en-us/GanipisettyAravind-6269/465PBFVK?sharingId=5466619202C52599" target="_blank" rel="noreferrer">
+                  🏅 Badge
+                </a>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">NLP in Azure (Get started with NLP in Azure)</p>
+                <p class="certMeta">Microsoft Learn • Share link</p>
+              </div>
+              <div class="certActions">
+                <a class="certAction badge" href="https://learn.microsoft.com/api/achievements/share/en-us/GanipisettyAravind-6269/PG5YD9F4?sharingId=5466619202C52599" target="_blank" rel="noreferrer">
+                  🏅 Badge
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="card">
+        <!-- NVIDIA -->
+        <div class="card full">
           <h3>NVIDIA</h3>
-          <ul>
-            <li>Building LLM Applications with Prompt Engineering</li>
-            <li>Prompt templates • LangChain/LCEL • Runnable functions • Parallel chains</li>
-          </ul>
+          <p style="margin:0;color:var(--muted);">
+            Click to open certificate image.
+          </p>
+          <div class="certList">
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Building LLM Applications with Prompt Engineering</p>
+                <p class="certMeta">Image stored locally in <b>cer/</b></p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/NVIDIA.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="card">
+        <!-- Cisco -->
+        <div class="card full">
           <h3>Cisco Networking Academy</h3>
-          <ul>
-            <li>CCNAv7: Switching, Routing, and Wireless Essentials</li>
-            <li>Networking Essentials</li>
-            <li>IoT Fundamentals: Connecting Things</li>
-            <li>CPA: Programming Essentials in C++</li>
-            <li>PCAP: Programming Essentials in Python</li>
-            <li>Cybersecurity Essentials</li>
-          </ul>
+          <p style="margin:0;color:var(--muted);">
+            Each item has a “Certificate” button (opens image).
+          </p>
+
+          <div class="certList">
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">CCNAv7: Switching, Routing, and Wireless Essentials</p>
+                <p class="certMeta">Cisco Networking Academy</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/CCNAv7 Switching, Routing, and Wireless Essentials Cisco Networking Academy.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Networking Essentials</p>
+                <p class="certMeta">Cisco Networking Academy</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Networking Essentials Cisco Networking Academy.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">IoT Fundamentals: Connecting Things</p>
+                <p class="certMeta">Cisco Networking Academy</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/IoT Fundamentals Connecting Things Cisco Networking Academy.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">CPA: Programming Essentials in C++</p>
+                <p class="certMeta">Cisco Networking Academy</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/CPA Programming Essentials in C++.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">PCAP: Programming Essentials in Python</p>
+                <p class="certMeta">Cisco Networking Academy</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/PCAP Programming Essentials in Python Cisco Networking Academy.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Cybersecurity Essentials</p>
+                <p class="certMeta">Cisco Networking Academy</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Cybersecurity Essentials Cisco Networking Academy.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="card">
+        <!-- Palo Alto (EduSkills) -->
+        <div class="card full">
           <h3>Palo Alto Networks (via EduSkills)</h3>
-          <ul>
-            <li>The Fundamentals of SOC (Certification)</li>
-            <li>The Fundamentals of SOC — Assessment (Score: 100)</li>
-            <li>Fundamentals of Network Security</li>
-            <li>Fundamentals of Cloud Security</li>
-            <li>Introduction to Cybersecurity</li>
-          </ul>
+          <p style="margin:0;color:var(--muted);">
+            Click “Certificate” for each image.
+          </p>
+
+          <div class="certList">
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">The Fundamentals of SOC (Certification)</p>
+                <p class="certMeta">Palo Alto Networks</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/The Fundamentals of SOC (Certification)  Palo Alto Networks.png">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">The Fundamentals of SOC — Assessment (Score: 100)</p>
+                <p class="certMeta">Palo Alto Networks</p>
+              </div>
+              <div class="certActions">
+                <!-- ✅ FIXED: # becomes %23 so browser loads file -->
+                <button class="certAction certificate" type="button" data-zoom="cer/The Fundamentals of SOC %23U2014 Assessment Palo Alto Networks.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Fundamentals of Network Security</p>
+                <p class="certMeta">Palo Alto Networks</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Fundamentals of Network Security  Palo Alto Networks.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Fundamentals of Cloud Security</p>
+                <p class="certMeta">Palo Alto Networks</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Fundamentals of Cloud Security  Palo Alto Networks.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Introduction to Cybersecurity</p>
+                <p class="certMeta">Palo Alto Networks</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Introduction to Cybersecurity Palo Alto Networks.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+          </div>
         </div>
 
+        <!-- NPTEL -->
         <div class="card full">
           <h3>NPTEL (SWAYAM)</h3>
-          <ul>
-            <li>Privacy and Security in Online Social Media (Jan–Apr 2023)</li>
-            <li>Data Science for Engineers (IIT Madras)</li>
-            <li>Introduction to Machine Learning (IIT Madras, Jul–Oct 2022)</li>
-            <li>Cloud Computing (IIT Kharagpur)</li>
-          </ul>
+
+          <div class="certList">
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Privacy and Security in Online Social Media (Jan–Apr 2023)</p>
+                <p class="certMeta">NPTEL</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Privacy and Security in Online Social Media Nptel.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Data Science for Engineers (IIT Madras)</p>
+                <p class="certMeta">NPTEL</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Data Science for Engineers Nptel.png">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Introduction to Machine Learning (IIT Madras, Jul–Oct 2022)</p>
+                <p class="certMeta">NPTEL</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Introduction to Machine Learning Nptel.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Cloud Computing (IIT Kharagpur)</p>
+                <p class="certMeta">NPTEL</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Cloud Computing Nptel.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+          </div>
         </div>
 
+        <!-- Coursera -->
         <div class="card full">
           <h3>Coursera (University of Colorado Boulder + UC San Diego)</h3>
-          <ul>
-            <li>Embedding Sensors and Motors (Specialization)</li>
-            <li>Pressure, Force, Motion, and Humidity Sensors</li>
-            <li>Sensor Manufacturing and Process Control</li>
-            <li>Motors and Motor Control Circuits</li>
-            <li>Sensors and Sensor Circuit Design</li>
-            <li>Object Oriented Programming in Java</li>
-          </ul>
+
+          <div class="certList">
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Embedding Sensors and Motors (Specialization)</p>
+                <p class="certMeta">Coursera</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Embedding Sensors and Motors (Specialization) Coursera.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Pressure, Force, Motion, and Humidity Sensors</p>
+                <p class="certMeta">Coursera</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Pressure, Force, Motion, and Humidity Sensors Coursera.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Sensor Manufacturing and Process Control</p>
+                <p class="certMeta">Coursera</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Sensor Manufacturing and Process Control Coursera.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Motors and Motor Control Circuits</p>
+                <p class="certMeta">Coursera</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Motors and Motor Control Circuits Coursera.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Sensors and Sensor Circuit Design</p>
+                <p class="certMeta">Coursera</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Sensors and Sensor Circuit Design Coursera.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+
+            <div class="certItem">
+              <div class="certLeft">
+                <p class="certTitle">Object Oriented Programming in Java</p>
+                <p class="certMeta">Coursera</p>
+              </div>
+              <div class="certActions">
+                <button class="certAction certificate" type="button" data-zoom="cer/Object Oriented Programming in Java Coursera.jpg">🧾 Certificate</button>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- ✅ REMOVED: Internships & Training Certificates (Images) -->
       </div>
     </section>
 
@@ -1156,31 +1523,29 @@
           </p>
         </div>
 
-        <!-- Essay Writing Achievement -->
-<div class="card full">
-  <h3>Essay Writing — District Level</h3>
-  <div class="meta">
-    <span class="pill">District Level</span>
-    <span class="pill">Achievement</span>
-  </div>
-  <ul>
-    <li>Secured Second Prize in district-level essay writing competition.</li>
-    <li>Recognized for structured thinking and communication skills.</li>
-  </ul>
-</div>
+        <div class="card full">
+          <h3>Essay Writing — District Level</h3>
+          <div class="meta">
+            <span class="pill">District Level</span>
+            <span class="pill">Achievement</span>
+          </div>
+          <ul>
+            <li>Secured Second Prize in district-level essay writing competition.</li>
+            <li>Recognized for structured thinking and communication skills.</li>
+          </ul>
+        </div>
 
-<!-- Academic Rank Achievement -->
-<div class="card full">
-  <h3>Academic Rank — VRSEC</h3>
-  <div class="meta">
-    <span class="pill">VRSEC</span>
-    <span class="pill">Academic Excellence</span>
-  </div>
-  <ul>
-    <li>Secured Second Branch Rank twice during undergraduate studies.</li>
-    <li>Maintained consistent academic performance across semesters.</li>
-  </ul>
-</div>
+        <div class="card full">
+          <h3>Academic Rank — VRSEC</h3>
+          <div class="meta">
+            <span class="pill">VRSEC</span>
+            <span class="pill">Academic Excellence</span>
+          </div>
+          <ul>
+            <li>Secured Second Branch Rank twice during undergraduate studies.</li>
+            <li>Maintained consistent academic performance across semesters.</li>
+          </ul>
+        </div>
 
       </div>
     </section>
@@ -1380,8 +1745,9 @@
       lbImg.src = '';
     }
 
-    document.querySelectorAll('[data-zoom]').forEach(img => {
-      img.addEventListener('click', () => openLightbox(img.getAttribute('data-zoom')));
+    // Works for BOTH images and buttons/anything with [data-zoom]
+    document.querySelectorAll('[data-zoom]').forEach(el => {
+      el.addEventListener('click', () => openLightbox(el.getAttribute('data-zoom')));
     });
 
     lbClose.addEventListener('click', closeLightbox);
