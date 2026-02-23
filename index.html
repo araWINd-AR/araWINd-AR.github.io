@@ -636,6 +636,15 @@
       object-fit: contain;
       background: #0b1220;
     }
+    /* ✅ PDF viewer inside lightbox */
+    .lightboxInner iframe{
+      width: min(1100px, 96vw);
+      height: 92vh;
+      display:none;
+      border:0;
+      background:#0b1220;
+    }
+
     .lbClose{
       position:absolute;
       top:10px;
@@ -647,6 +656,7 @@
       padding: 8px 10px;
       cursor:pointer;
       font-weight: 800;
+      z-index: 2;
     }
     .lbClose:hover{ filter: brightness(1.1); }
 
@@ -877,35 +887,7 @@
             <a class="btn primary" href="https://github.com/araWINd-AR/Face_Recognition_Attendance_System_Python" target="_blank" rel="noreferrer">Project code link</a>
           </div>
         </article>
-
-        <article class="card full">
-          <h3>Python Turtle Graphics — Creative Coding Series</h3>
-          <div class="meta">
-            <span class="pill">Python</span>
-            <span class="pill">Turtle</span>
-            <span class="pill">Math/Geometry</span>
-            <span class="pill">Clean code</span>
-          </div>
-
-          <p style="margin:0;color:var(--muted);">
-            Built a collection of visual programs (hearts, flowers, stars, spirals, rosettes, radial burst patterns) using loops,
-            functions, angles, and coordinate logic—focused on strengthening programming fundamentals through geometry.
-          </p>
-
-          <ul>
-            <li>Demonstrates control flow, modular functions, and coordinate reasoning</li>
-            <li>Mathematical patterns + symmetry built purely with Python logic</li>
-            <li>Learning approach: implement myself, use AI only to clarify concepts</li>
-          </ul>
-
-          <div class="ctaRow" style="margin-top:14px;">
-            <a class="btn primary" href="https://lnkd.in/eB-_hv3B" target="_blank" rel="noreferrer">Project Code Link</a>
-            <a class="btn" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer">GitHub</a>
-            <!-- ✅ optional: LinkedIn quick share -->
-            <a class="btn" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-        </article>
-
+        
         <!-- ✅ ADDED PROJECT (Task Flow Website) -->
         <article class="card full">
           <h3>Task Flow — Personal Tracking System (Website)</h3>
@@ -931,6 +913,33 @@
           </div>
         </article>
         <!-- ✅ END ADDED PROJECT -->
+
+        <article class="card full">
+          <h3>Python Turtle Graphics — Creative Coding Series</h3>
+          <div class="meta">
+            <span class="pill">Python</span>
+            <span class="pill">Turtle</span>
+            <span class="pill">Math/Geometry</span>
+            <span class="pill">Clean code</span>
+          </div>
+
+          <p style="margin:0;color:var(--muted);">
+            Built a collection of visual programs (hearts, flowers, stars, spirals, rosettes, radial burst patterns) using loops,
+            functions, angles, and coordinate logic—focused on strengthening programming fundamentals through geometry.
+          </p>
+
+          <ul>
+            <li>Demonstrates control flow, modular functions, and coordinate reasoning</li>
+            <li>Mathematical patterns + symmetry built purely with Python logic</li>
+            <li>Learning approach: implement myself, use AI only to clarify concepts</li>
+          </ul>
+
+          <div class="ctaRow" style="margin-top:14px;">
+            <a class="btn primary" href="https://lnkd.in/eB-_hv3B" target="_blank" rel="noreferrer">Project Code Link</a>
+            <a class="btn" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </article>
 
         <article class="card full">
           <h3>Blood Donor Information System Website</h3>
@@ -1001,7 +1010,6 @@
           <a class="btn primary" href="https://www.computer.org/csdl/proceedings-article/icoeca/2024/857900a505/1Za3x1pNDQA" target="_blank" rel="noreferrer">
             Publication Link
           </a>
-          <!-- ✅ ADDED LinkedIn button here too -->
           <a class="btn" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
 
@@ -1034,7 +1042,6 @@
             <li>Strengthened problem-solving and applied learning using hands-on tasks.</li>
           </ul>
 
-          <!-- ✅ Certificate button INSIDE Experience -->
           <div class="certList">
             <div class="certItem">
               <div class="certLeft">
@@ -1045,7 +1052,6 @@
                 <button class="certAction certificate" type="button" data-zoom="cer/AI & Machine Learning Intern certificate.jpg">
                   🧾 Certificate
                 </button>
-                <!-- ✅ ADDED LinkedIn action -->
                 <a class="certAction linkedin" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">
                   in LinkedIn
                 </a>
@@ -1065,7 +1071,6 @@
             <li>Built a strong base in SOC, cloud security, and network security fundamentals.</li>
           </ul>
 
-          <!-- ✅ Certificate button INSIDE Experience -->
           <div class="certList">
             <div class="certItem">
               <div class="certLeft">
@@ -1076,7 +1081,6 @@
                 <button class="certAction certificate" type="button" data-zoom="cer/Cybersecurity Virtual Intern certificate.jpg">
                   🧾 Certificate
                 </button>
-                <!-- ✅ ADDED LinkedIn action -->
                 <a class="certAction linkedin" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">
                   in LinkedIn
                 </a>
@@ -1096,7 +1100,6 @@
             Completed a structured training program covering fundamentals of design verification using SystemVerilog and UVM.
           </p>
 
-          <!-- ✅ Certificate button INSIDE Experience -->
           <div class="certList">
             <div class="certItem">
               <div class="certLeft">
@@ -1107,7 +1110,6 @@
                 <button class="certAction certificate" type="button" data-zoom="cer/Design Verification Training.jpg">
                   🧾 Certificate
                 </button>
-                <!-- ✅ ADDED LinkedIn action -->
                 <a class="certAction linkedin" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">
                   in LinkedIn
                 </a>
@@ -1228,31 +1230,17 @@
                     <button class="certAction certificate" type="button" data-zoom="cer/Python 101 for Data Science.jpeg">
                       🧾 Certificate
                     </button>
-                    <!-- ✅ ADDED LinkedIn action -->
                     <a class="certAction linkedin" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">
                       in LinkedIn
                     </a>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
 
-        <!-- ✅ ADDED: Udemy Power BI (PDF) -->
-        <div class="card full">
-          <h3>Udemy — Microsoft Power BI - The Complete Masterclass</h3>
-          <div class="meta">
-            <span class="pill">Udemy</span>
-            <span class="pill">Feb 20, 2026</span>
-            <span class="pill">17.5 total hours</span>
-          </div>
-
-          <p style="margin:0;color:var(--muted);">
-            Completed Microsoft Power BI training (course: “Microsoft Power BI - The Complete Masterclass”, instructor: Nikolai Schuler). :contentReference[oaicite:1]{index=1}
-          </p>
-
-         
         <!-- ✅ ADDED: Udemy Power BI (PDF) -->
         <div class="card full">
           <h3>Udemy — Microsoft Power BI - The Complete Masterclass</h3>
@@ -1285,7 +1273,6 @@
           </div>
         </div>
 
-
         <!-- Microsoft Learn -->
         <div class="card full">
           <h3>Microsoft Learn</h3>
@@ -1303,7 +1290,6 @@
                 <a class="certAction badge" href="https://learn.microsoft.com/api/achievements/share/en-us/GanipisettyAravind-6269/465PBFVK?sharingId=5466619202C52599" target="_blank" rel="noreferrer">
                   🏅 Badge
                 </a>
-                <!-- ✅ ADDED LinkedIn action -->
                 <a class="certAction linkedin" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">
                   in LinkedIn
                 </a>
@@ -1319,7 +1305,6 @@
                 <a class="certAction badge" href="https://learn.microsoft.com/api/achievements/share/en-us/GanipisettyAravind-6269/PG5YD9F4?sharingId=5466619202C52599" target="_blank" rel="noreferrer">
                   🏅 Badge
                 </a>
-                <!-- ✅ ADDED LinkedIn action -->
                 <a class="certAction linkedin" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">
                   in LinkedIn
                 </a>
@@ -1342,7 +1327,6 @@
               </div>
               <div class="certActions">
                 <button class="certAction certificate" type="button" data-zoom="cer/NVIDIA.jpg">🧾 Certificate</button>
-                <!-- ✅ ADDED LinkedIn action -->
                 <a class="certAction linkedin" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">
                   in LinkedIn
                 </a>
@@ -1739,9 +1723,8 @@
 
           <div class="ctaRow" style="margin-top:14px;">
             <a class="btn primary" href="mailto:aravindganipisetty@gmail.com">aravindganipisetty@gmail.com</a>
-            <a class="btn" href="tel:+12034107376">📞 <span>Phone</span>
+            <a class="btn" href="tel:+12034107376">📞 <span>Phone</span></a>
             <a class="btn" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer">GitHub</a>
-            <!-- ✅ ADDED LinkedIn -->
             <a class="btn" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
 
@@ -1749,7 +1732,6 @@
             <div class="copyBtn" data-copy="aravindganipisetty@gmail.com">📧 Email <small>copy</small></div>
             <div class="copyBtn" data-copy="+1203-410-7376">📞 Phone <small>copy</small></div>
             <div class="copyBtn" data-copy="https://github.com/araWINd-AR">🧑‍💻 GitHub <small>copy</small></div>
-            <!-- ✅ ADDED LinkedIn copy -->
             <div class="copyBtn" data-copy="https://www.linkedin.com/in/aravind-ganipisetty/">🔗 LinkedIn <small>copy</small></div>
           </div>
         </div>
@@ -1767,6 +1749,8 @@
     <div class="lightboxInner" role="dialog" aria-modal="true" aria-label="Image preview">
       <button class="lbClose" id="lbClose" type="button">✕ Close</button>
       <img id="lbImg" alt="Preview" />
+      <!-- ✅ ADDED: pdf iframe viewer -->
+      <iframe id="lbPdf" title="PDF Preview"></iframe>
     </div>
   </div>
 
@@ -1860,20 +1844,42 @@
       if (!e.target.closest('.card, .mini, #heroCard')) clearSelected();
     });
 
-    // ✅ Lightbox zoom
+    // ✅ Lightbox zoom (now supports images + PDFs)
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lbImg');
+    const lbPdf = document.getElementById('lbPdf');
     const lbClose = document.getElementById('lbClose');
 
+    function isPdf(src){
+      return typeof src === 'string' && src.toLowerCase().endsWith('.pdf');
+    }
+
     function openLightbox(src){
-      lbImg.src = src;
+      if(isPdf(src)){
+        lbImg.style.display = 'none';
+        lbImg.src = '';
+
+        lbPdf.style.display = 'block';
+        lbPdf.src = src;
+      } else {
+        lbPdf.style.display = 'none';
+        lbPdf.src = '';
+
+        lbImg.style.display = 'block';
+        lbImg.src = src;
+      }
+
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
     }
+
     function closeLightbox(){
       lightbox.classList.remove('open');
       lightbox.setAttribute('aria-hidden', 'true');
       lbImg.src = '';
+      lbPdf.src = '';
+      lbImg.style.display = 'block';
+      lbPdf.style.display = 'none';
     }
 
     // Works for BOTH images and buttons/anything with [data-zoom]
