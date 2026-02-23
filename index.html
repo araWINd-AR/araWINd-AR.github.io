@@ -1855,18 +1855,21 @@
     }
 
     function openLightbox(src){
-      if(isPdf(src)){
+      // ✅ GitHub Pages + filenames with spaces need URL-encoding (e.g., "Power BI certificate.pdf")
+      const safeSrc = (typeof src === 'string') ? encodeURI(src) : src;
+
+      if(isPdf(safeSrc)){
         lbImg.style.display = 'none';
         lbImg.src = '';
 
         lbPdf.style.display = 'block';
-        lbPdf.src = src;
+        lbPdf.src = safeSrc;
       } else {
         lbPdf.style.display = 'none';
         lbPdf.src = '';
 
         lbImg.style.display = 'block';
-        lbImg.src = src;
+        lbImg.src = safeSrc;
       }
 
       lightbox.classList.add('open');
