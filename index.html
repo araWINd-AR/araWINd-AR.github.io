@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,7 +25,7 @@
       --glowA: rgba(121,166,255,.22);
       --glowB: rgba(94,234,212,.18);
 
-      /* ✅ scroll offset */
+      /* scroll space for sticky header */
       --headerH: 78px;
       --scrollPad: 120px;
     }
@@ -53,7 +52,7 @@
     a{ color:inherit; text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    /* Layout */
+    /* layout */
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 64px; }
     header{
       position: sticky;
@@ -116,7 +115,7 @@
       box-shadow: 0 0 0 3px rgba(121,166,255,.10);
     }
 
-    /* Hero */
+    /* hero area */
     .hero{
       padding: 26px 0 10px;
       display:grid;
@@ -261,7 +260,7 @@
     }
     .mini p{ margin:0; font-size: 14px; color: var(--text); }
 
-    /* Sections */
+    /* page sections */
     section{ padding: 18px 0; }
     .sectionTitle{
       display:flex;
@@ -337,7 +336,7 @@
     }
     .card:hover:before{ opacity: 1; }
 
-    /* ✅ selected state (stays after click) */
+    /* selected card glow */
     .card.selected{
       border: 1px solid rgba(121,166,255,.75) !important;
 
@@ -495,7 +494,7 @@
       box-shadow: 0 10px 22px rgba(0,0,0,.18);
     }
 
-    /* certificates gallery (existing) */
+    /* certificates gallery */
     .certRow{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
@@ -516,7 +515,7 @@
       font-size: 13px;
     }
 
-    /* ✅ certificate list with "Certificate / Badge / Link" actions */
+    /* certificate list and buttons */
     .certList{
       display:flex;
       flex-direction:column;
@@ -588,13 +587,13 @@
       background: linear-gradient(135deg, rgba(236,72,153,.12), rgba(121,166,255,.06));
     }
 
-    /* ✅ Linkedin action style */
+    /* linkedin button style */
     .certAction.linkedin{
       border-color: rgba(10,102,194,.40);
       background: linear-gradient(135deg, rgba(10,102,194,.18), rgba(121,166,255,.08));
     }
 
-    /* Footer */
+    /* footer */
     footer{
       margin-top: 24px;
       padding-top: 18px;
@@ -607,7 +606,7 @@
       gap:10px;
     }
 
-    /* Lightbox */
+    /* lightbox */
     .lightbox{
       position:fixed;
       inset:0;
@@ -637,7 +636,7 @@
       object-fit: contain;
       background: #0b1220;
     }
-    /* ✅ PDF viewer inside lightbox */
+    /* pdf viewer in lightbox */
     .lightboxInner iframe{
       width: min(1100px, 96vw);
       height: 92vh;
@@ -661,7 +660,7 @@
     }
     .lbClose:hover{ filter: brightness(1.1); }
 
-    /* Section color themes */
+    /* section colors */
     #about{ --bcol: rgba(121,166,255,.34); --g1: rgba(121,166,255,.25); --g2: rgba(94,234,212,.14); }
     #skills{ --bcol: rgba(94,234,212,.30); --g1: rgba(94,234,212,.18); --g2: rgba(121,166,255,.12); }
     #projects{ --bcol: rgba(255,184,77,.30); --g1: rgba(255,184,77,.22); --g2: rgba(121,166,255,.10); }
@@ -673,7 +672,7 @@
     #activities{ --bcol: rgba(20,184,166,.30); --g1: rgba(20,184,166,.18); --g2: rgba(167,139,250,.10); }
     #contact{ --bcol: rgba(148,163,184,.30); --g1: rgba(148,163,184,.18); --g2: rgba(121,166,255,.10); }
 
-    /* Responsive */
+    /* responsive */
     @media (max-width: 900px){
       :root{ --headerH: 72px; --scrollPad: 122px; }
       .hero{ grid-template-columns: 1fr; }
@@ -686,7 +685,7 @@
       .certActions{ justify-content:flex-start; }
     }
 
-    /* Print */
+    /* print view */
     @media print{
       header{ position: static; backdrop-filter:none; background: none; border:0; height:auto; }
       .btn,.copyBtn,.lightbox,.certActions{ display:none !important; }
@@ -700,7 +699,7 @@
 </head>
 
 <body>
-  <!-- Top Nav -->
+  <!-- top navigation -->
   <header>
     <nav class="nav" aria-label="Primary">
       <div class="brand">
@@ -727,7 +726,7 @@
   </header>
 
   <main class="wrap">
-    <!-- Hero -->
+    <!-- hero -->
     <section class="hero" id="top">
       <div class="heroCard" id="heroCard">
         <div class="heroInner">
@@ -794,7 +793,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-    <!-- About -->
+    <!-- about -->
     <section id="about">
       <div class="sectionTitle">
         <h2>About</h2>
@@ -809,7 +808,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- skills -->
     <section id="skills">
       <div class="sectionTitle">
         <h2>Skills</h2>
@@ -861,7 +860,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-        <!-- Projects -->
+        <!-- projects -->
     <section id="projects">
       <div class="sectionTitle">
         <h2>Projects</h2>
@@ -919,7 +918,7 @@ Identify real problems → design solutions → build usable applications → de
           </div>
         </article>
         
-        <!-- ✅ ADDED PROJECT (Task Flow Website) -->
+        <!-- Task Flow website project -->
         <article class="card full">
           <h3>Task Flow — Personal Tracking System (Website)</h3>
           <div class="meta">
@@ -944,7 +943,7 @@ Identify real problems → design solutions → build usable applications → de
             <a class="btn" href="https://youtu.be/N2ZpNXGeFbU?si=84bHWmiaOZf-9I0c" target="_blank" rel="noreferrer">YouTube Demo</a>
           </div>
         </article>
-        <!-- ✅ END ADDED PROJECT -->
+        <!-- end Task Flow website project -->
 
         <article class="card full">
           <h3>Python Turtle Graphics — Creative Coding Series</h3>
@@ -1172,7 +1171,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-    <!-- Publications -->
+    <!-- publications -->
     <section id="publications">
       <div class="sectionTitle">
         <h2>Publications</h2>
@@ -1208,7 +1207,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- experience -->
     <section id="experience">
       <div class="sectionTitle">
         <h2>Experience</h2>
@@ -1305,7 +1304,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-    <!-- Volunteering -->
+    <!-- volunteering -->
     <section id="volunteering">
       <div class="sectionTitle">
         <h2>Volunteering & Leadership</h2>
@@ -1374,7 +1373,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-    <!-- Certifications -->
+    <!-- certifications -->
     <section id="certifications">
       <div class="sectionTitle">
         <h2>Certifications & Badges</h2>
@@ -1382,7 +1381,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
 
       <div class="grid">
-        <!-- IBM -->
+        <!-- IBM certificate -->
         <div class="card full">
           <h3>IBM PY0101EN — Python 101 for Data Science</h3>
           <div class="meta">
@@ -1425,7 +1424,7 @@ Identify real problems → design solutions → build usable applications → de
           </div>
         </div>
 
-        <!-- ✅ ADDED: Udemy Power BI (PDF) -->
+        <!-- Udemy Power BI certificate -->
         <div class="card full">
           <h3>Udemy — Microsoft Power BI - The Complete Masterclass</h3>
           <div class="meta">
@@ -1444,7 +1443,7 @@ Identify real problems → design solutions → build usable applications → de
                 <p class="certTitle">Microsoft Power BI - The Complete Masterclass (Certificate)</p>
               </div>
               <div class="certActions">
-                <!-- IMPORTANT: put the pdf file exactly at cer/Power BI certificate.pdf -->
+                <!-- keep this pdf inside the cer folder -->
                 <button class="certAction certificate" type="button" data-zoom="cer/Power BI certificate.pdf">
                   🧾 Certificate
                 </button>
@@ -1455,7 +1454,7 @@ Identify real problems → design solutions → build usable applications → de
             </div>
           </div>
         </div>
-        <!-- ✅ ADDED: uCertify Ethical Hacker Certificate -->
+        <!-- uCertify ethical hacker certificate -->
 <div class="card full">
   <h3>uCertify — Certified Ethical Hacker (CEH v12)</h3>
 
@@ -1518,7 +1517,7 @@ Identify real problems → design solutions → build usable applications → de
     </div>
   </div>
 </div>
-        <!-- Microsoft Learn -->
+        <!-- Microsoft Learn badges -->
         <div class="card full">
           <h3>Microsoft Learn</h3>
           <p style="margin:0;color:var(--muted);">
@@ -1558,7 +1557,7 @@ Identify real problems → design solutions → build usable applications → de
           </div>
         </div>
 
-        <!-- NVIDIA -->
+        <!-- NVIDIA certificate -->
         <div class="card full">
           <h3>NVIDIA</h3>
           <p style="margin:0;color:var(--muted);">
@@ -1580,7 +1579,7 @@ Identify real problems → design solutions → build usable applications → de
           </div>
         </div>
         
-        <!-- Cisco -->
+        <!-- Cisco certificates -->
         <div class="card full">
           <h3>Cisco Networking Academy</h3>
           <p style="margin:0;color:var(--muted);">
@@ -1656,7 +1655,7 @@ Identify real problems → design solutions → build usable applications → de
           </div>
         </div>
 
-        <!-- Palo Alto (EduSkills) -->
+        <!-- Palo Alto certificates -->
         <div class="card full">
           <h3>Palo Alto Networks (via EduSkills)</h3>
           <p style="margin:0;color:var(--muted);">
@@ -1721,7 +1720,7 @@ Identify real problems → design solutions → build usable applications → de
           </div>
         </div>
 
-        <!-- NPTEL -->
+        <!-- NPTEL certificates -->
         <div class="card full">
           <h3>NPTEL (SWAYAM)</h3>
 
@@ -1772,7 +1771,7 @@ Identify real problems → design solutions → build usable applications → de
           </div>
         </div>
 
-        <!-- Coursera -->
+        <!-- Coursera certificates -->
         <div class="card full">
           <h3>Coursera (University of Colorado Boulder + UC San Diego)</h3>
 
@@ -1848,7 +1847,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-    <!-- Achievements -->
+    <!-- achievements -->
     <section id="achievements">
       <div class="sectionTitle">
         <h2>Achievements</h2>
@@ -1906,7 +1905,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-    <!-- Activities -->
+    <!-- activities -->
     <section id="activities">
       <div class="sectionTitle">
         <h2>Activities</h2>
@@ -1952,7 +1951,7 @@ Identify real problems → design solutions → build usable applications → de
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- contact -->
     <section id="contact">
       <div class="sectionTitle">
         <h2>Contact</h2>
@@ -1989,21 +1988,21 @@ Identify real problems → design solutions → build usable applications → de
     </section>
   </main>
 
-  <!-- Lightbox -->
+  <!-- lightbox popup -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightboxInner" role="dialog" aria-modal="true" aria-label="Image preview">
       <button class="lbClose" id="lbClose" type="button">✕ Close</button>
       <img id="lbImg" alt="Preview" />
-      <!-- ✅ ADDED: pdf iframe viewer -->
+      <!-- pdf viewer -->
       <iframe id="lbPdf" title="PDF Preview"></iframe>
     </div>
   </div>
 
   <script>
-    // year
+    // update year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // copy-to-clipboard
+    // copy buttons
     const copyBtns = document.querySelectorAll('[data-copy]');
     copyBtns.forEach(btn => {
       btn.addEventListener('click', async () => {
@@ -2027,7 +2026,7 @@ Identify real problems → design solutions → build usable applications → de
       });
     });
 
-    // ✅ glow position follows cursor for cards + minis
+    // move the glow with the mouse
     function setGlowXY(el, e){
       const r = el.getBoundingClientRect();
       const x = ((e.clientX - r.left) / r.width) * 100;
@@ -2043,7 +2042,7 @@ Identify real problems → design solutions → build usable applications → de
       mini.addEventListener('mousemove', (e) => setGlowXY(mini, e));
     });
 
-    // ✅ persistent click select (stays until you click another)
+    // keep the clicked card highlighted
     const cards = Array.from(document.querySelectorAll('.card'));
     const minis = Array.from(document.querySelectorAll('.mini'));
     const heroCard = document.getElementById('heroCard');
@@ -2084,12 +2083,12 @@ Identify real problems → design solutions → build usable applications → de
       });
     }
 
-    // click outside clears selection
+    // clear highlight when clicking outside
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.card, .mini, #heroCard')) clearSelected();
     });
 
-    // ✅ Lightbox zoom (now supports images + PDFs)
+    // open certificates and pdfs in popup
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lbImg');
     const lbPdf = document.getElementById('lbPdf');
@@ -2100,7 +2099,7 @@ Identify real problems → design solutions → build usable applications → de
     }
 
     function openLightbox(src){
-      // ✅ GitHub Pages + filenames with spaces need URL-encoding (e.g., "Power BI certificate.pdf")
+      // encode file names so spaces work on GitHub Pages
       const safeSrc = (typeof src === 'string') ? encodeURI(src) : src;
 
       if(isPdf(safeSrc)){
@@ -2130,7 +2129,7 @@ Identify real problems → design solutions → build usable applications → de
       lbPdf.style.display = 'none';
     }
 
-    // Works for BOTH images and buttons/anything with [data-zoom]
+    // works for images and certificate buttons
     document.querySelectorAll('[data-zoom]').forEach(el => {
       el.addEventListener('click', () => openLightbox(el.getAttribute('data-zoom')));
     });
@@ -2143,7 +2142,7 @@ Identify real problems → design solutions → build usable applications → de
       if(e.key === 'Escape') closeLightbox();
     });
 
-    // ✅ ALWAYS scroll to exact top
+    // scroll section to the top
     const scrollPad = () => {
       const v = getComputedStyle(document.documentElement).getPropertyValue('--scrollPad').trim();
       const n = parseInt(v.replace('px',''), 10);
@@ -2157,7 +2156,7 @@ Identify real problems → design solutions → build usable applications → de
       window.scrollTo({ top, behavior: 'smooth' });
     }
 
-    // ✅ click nav: force top alignment + glow section + glow nav item
+    // nav click scroll and highlight
     const nav = document.getElementById('navlinks');
     const navLinks = Array.from(nav.querySelectorAll('a[data-link]'));
 
@@ -2184,7 +2183,7 @@ Identify real problems → design solutions → build usable applications → de
       });
     });
 
-    // ✅ highlight nav while scrolling
+    // highlight nav while scrolling
     const sections = navLinks
       .map(a => document.getElementById(a.getAttribute('data-link')))
       .filter(Boolean);
@@ -2202,7 +2201,7 @@ Identify real problems → design solutions → build usable applications → de
 
     sections.forEach(s => io.observe(s));
 
-    // ✅ load with hash
+    // open directly to a section if the url has a hash
     window.addEventListener('load', () => {
       const id = (location.hash || '').replace('#','');
       if(id){
