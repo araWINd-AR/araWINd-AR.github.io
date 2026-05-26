@@ -28,7 +28,7 @@
 
       /* scroll space for sticky header */
       --headerH: 78px;
-      --scrollPad: 105px;
+      --scrollPad: 0px;
     }
 
     *{ box-sizing:border-box; }
@@ -747,7 +747,7 @@
 
     /* responsive */
     @media (max-width: 900px){
-      :root{ --headerH: 72px; --scrollPad: 105px; }
+      :root{ --headerH: 72px; --scrollPad: 0px; }
       .hero{ grid-template-columns: 1fr; }
       .miniGrid{ grid-template-columns: 1fr; }
       .card{ grid-column: span 12; }
@@ -2309,19 +2309,25 @@ Identify real problems → design solutions → build usable applications → de
       if(e.key === 'Escape') closeLightbox();
     });
 
-    // scroll to section without leaving a big blank gap
-    function pageGap(){
+    // navbar click scroll
+    // this scrolls to the section title, not above it
+    function headerSpace(){
       const header = document.querySelector('header');
-      const headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 90;
-      return headerHeight + 10;
+      const h = header ? Math.ceil(header.getBoundingClientRect().height) : 90;
+      return h + 6;
     }
 
     function scrollToSection(id){
-      const el = document.getElementById(id);
-      if(!el) return;
+      const section = document.getElementById(id);
+      if(!section) return;
 
-      const top = el.getBoundingClientRect().top + window.pageYOffset - pageGap();
-      window.scrollTo({ top, behavior: 'smooth' });
+      const title = section.querySelector('.sectionTitle') || section;
+      const top = title.getBoundingClientRect().top + window.pageYOffset - headerSpace();
+
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: 'smooth'
+      });
     }
 
     // nav click scroll and highlight
@@ -2364,7 +2370,7 @@ Identify real problems → design solutions → build usable applications → de
     }, {
       root: null,
       threshold: [0.25, 0.40, 0.55],
-      rootMargin: `-${pageGap()}px 0px -55% 0px`
+      rootMargin: '-45% 0px -45% 0px'
     });
 
     sections.forEach(s => io.observe(s));
