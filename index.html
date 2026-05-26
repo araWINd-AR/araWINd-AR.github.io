@@ -27,8 +27,8 @@
       --glowB: rgba(94,234,212,.18);
 
       /* scroll space for sticky header */
-      --headerH: 88px;
-      --scrollPad: 185px;
+      --headerH: 78px;
+      --scrollPad: 105px;
     }
 
     *{ box-sizing:border-box; }
@@ -61,7 +61,7 @@
       z-index: 30;
       min-height: var(--headerH);
       backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.72);
+      background: rgba(11,18,32,.55);
       border-bottom: 1px solid var(--line);
     }
     .nav{
@@ -73,7 +73,6 @@
       align-items:center;
       justify-content:space-between;
       gap:14px;
-      flex-wrap:wrap;
     }
     .brand{
       display:flex; align-items:center; gap:12px;
@@ -92,18 +91,14 @@
       margin:0; font-size: 12px; color: var(--muted);
     }
     .navlinks{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 8px;
+      display:flex; flex-wrap:wrap;
+      gap: 10px;
       justify-content:flex-end;
-      align-items:center;
-      flex: 1;
-      min-width: 520px;
     }
     .navlinks a{
       font-size: 13px;
       color: var(--muted);
-      padding: 7px 9px;
+      padding: 8px 10px;
       border: 1px solid transparent;
       border-radius: 12px;
       transition: background .2s ease, border-color .2s ease, color .2s ease;
@@ -752,16 +747,12 @@
 
     /* responsive */
     @media (max-width: 900px){
-      :root{ --headerH: 72px; --scrollPad: 210px; }
+      :root{ --headerH: 72px; --scrollPad: 105px; }
       .hero{ grid-template-columns: 1fr; }
       .miniGrid{ grid-template-columns: 1fr; }
       .card{ grid-column: span 12; }
       .twoCol{ grid-template-columns: 1fr; }
       .brand{ min-width: unset; }
-      .navlinks{
-        min-width: 100%;
-        justify-content:flex-start;
-      }
       .certRow{ grid-template-columns: 1fr; }
       .certItem{ flex-direction:column; }
       .certActions{ justify-content:flex-start; }
@@ -827,7 +818,6 @@
 
           <div class="ctaRow">
             <a class="btn primary" href="#projects">View Projects</a>
-            <a class="btn" href="#education">Education</a>
             <a class="btn" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a class="btn" href="mailto:aravindganipisetty@gmail.com">Email</a>
@@ -2319,17 +2309,18 @@ Identify real problems → design solutions → build usable applications → de
       if(e.key === 'Escape') closeLightbox();
     });
 
-    // scroll section to the top
-    const scrollPad = () => {
-      const v = getComputedStyle(document.documentElement).getPropertyValue('--scrollPad').trim();
-      const n = parseInt(v.replace('px',''), 10);
-      return Number.isFinite(n) ? n : 120;
-    };
+    // scroll to section without leaving a big blank gap
+    function pageGap(){
+      const header = document.querySelector('header');
+      const headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 90;
+      return headerHeight + 10;
+    }
 
     function scrollToSection(id){
       const el = document.getElementById(id);
       if(!el) return;
-      const top = el.getBoundingClientRect().top + window.pageYOffset - scrollPad();
+
+      const top = el.getBoundingClientRect().top + window.pageYOffset - pageGap();
       window.scrollTo({ top, behavior: 'smooth' });
     }
 
@@ -2373,7 +2364,7 @@ Identify real problems → design solutions → build usable applications → de
     }, {
       root: null,
       threshold: [0.25, 0.40, 0.55],
-      rootMargin: `-${scrollPad()}px 0px -55% 0px`
+      rootMargin: `-${pageGap()}px 0px -55% 0px`
     });
 
     sections.forEach(s => io.observe(s));
