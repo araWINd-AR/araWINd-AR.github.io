@@ -27,8 +27,8 @@
       --glowB: rgba(94,234,212,.18);
 
       /* scroll space for sticky header */
-      --headerH: 78px;
-      --scrollPad: 120px;
+      --headerH: 88px;
+      --scrollPad: 185px;
     }
 
     *{ box-sizing:border-box; }
@@ -59,13 +59,13 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      height: var(--headerH);
+      min-height: var(--headerH);
       backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.55);
+      background: rgba(11,18,32,.72);
       border-bottom: 1px solid var(--line);
     }
     .nav{
-      height: var(--headerH);
+      min-height: var(--headerH);
       max-width: var(--max);
       margin: 0 auto;
       padding: 12px 18px;
@@ -73,6 +73,7 @@
       align-items:center;
       justify-content:space-between;
       gap:14px;
+      flex-wrap:wrap;
     }
     .brand{
       display:flex; align-items:center; gap:12px;
@@ -91,14 +92,18 @@
       margin:0; font-size: 12px; color: var(--muted);
     }
     .navlinks{
-      display:flex; flex-wrap:wrap;
-      gap: 10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
       justify-content:flex-end;
+      align-items:center;
+      flex: 1;
+      min-width: 520px;
     }
     .navlinks a{
       font-size: 13px;
       color: var(--muted);
-      padding: 8px 10px;
+      padding: 7px 9px;
       border: 1px solid transparent;
       border-radius: 12px;
       transition: background .2s ease, border-color .2s ease, color .2s ease;
@@ -747,12 +752,16 @@
 
     /* responsive */
     @media (max-width: 900px){
-      :root{ --headerH: 72px; --scrollPad: 122px; }
+      :root{ --headerH: 72px; --scrollPad: 210px; }
       .hero{ grid-template-columns: 1fr; }
       .miniGrid{ grid-template-columns: 1fr; }
       .card{ grid-column: span 12; }
       .twoCol{ grid-template-columns: 1fr; }
       .brand{ min-width: unset; }
+      .navlinks{
+        min-width: 100%;
+        justify-content:flex-start;
+      }
       .certRow{ grid-template-columns: 1fr; }
       .certItem{ flex-direction:column; }
       .certActions{ justify-content:flex-start; }
@@ -818,6 +827,7 @@
 
           <div class="ctaRow">
             <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="#education">Education</a>
             <a class="btn" href="https://github.com/araWINd-AR" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn" href="https://www.linkedin.com/in/aravind-ganipisetty/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a class="btn" href="mailto:aravindganipisetty@gmail.com">Email</a>
