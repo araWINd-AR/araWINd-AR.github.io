@@ -450,6 +450,77 @@
       gap: 14px;
     }
 
+    /* education part */
+    .eduList{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+
+    .eduItem{
+      display:flex;
+      gap: 14px;
+      padding: 14px;
+      border: 1px solid rgba(231,238,252,.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,.02);
+    }
+
+    .eduLogo{
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      flex: 0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text);
+      border: 1px solid rgba(231,238,252,.14);
+      background: linear-gradient(135deg, rgba(121,166,255,.22), rgba(94,234,212,.10));
+    }
+
+    .eduMain{
+      min-width: 0;
+      flex: 1;
+    }
+
+    .eduTop{
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin-bottom: 4px;
+    }
+
+    .eduSchool{
+      margin:0;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .eduDate{
+      color: var(--muted);
+      font-size: 13px;
+      white-space:nowrap;
+    }
+
+    .eduDegree{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .eduGrade{
+      margin: 8px 0 0;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     .copyRow{
       display:flex;
       gap:10px;
@@ -663,6 +734,7 @@
 
     /* section colors */
     #about{ --bcol: rgba(121,166,255,.34); --g1: rgba(121,166,255,.25); --g2: rgba(94,234,212,.14); }
+    #education{ --bcol: rgba(14,165,233,.32); --g1: rgba(14,165,233,.18); --g2: rgba(94,234,212,.10); }
     #skills{ --bcol: rgba(94,234,212,.30); --g1: rgba(94,234,212,.18); --g2: rgba(121,166,255,.12); }
     #projects{ --bcol: rgba(255,184,77,.30); --g1: rgba(255,184,77,.22); --g2: rgba(121,166,255,.10); }
     #publications{ --bcol: rgba(167,139,250,.32); --g1: rgba(167,139,250,.20); --g2: rgba(94,234,212,.10); }
@@ -684,6 +756,8 @@
       .certRow{ grid-template-columns: 1fr; }
       .certItem{ flex-direction:column; }
       .certActions{ justify-content:flex-start; }
+      .eduItem{ flex-direction:column; }
+      .eduDate{ white-space:normal; }
     }
 
     /* print view */
@@ -713,6 +787,7 @@
 
       <div class="navlinks" id="navlinks">
         <a href="#about" data-link="about">About</a>
+        <a href="#education" data-link="education">Education</a>
         <a href="#skills" data-link="skills">Skills</a>
         <a href="#projects" data-link="projects">Projects</a>
         <a href="#publications" data-link="publications">Publications</a>
@@ -731,12 +806,12 @@
     <section class="hero" id="top">
       <div class="heroCard" id="heroCard">
         <div class="heroInner">
-          <div class="kicker"><span class="dot" aria-hidden="true"></span>Actively looking for Summer Internships</div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Actively searching for Data Analytics roles</div>
 
           <h2 class="heroTitle">Aravind Ganipisetty</h2>
           <p class="heroSub">
-            Master’s in Computer and Information Science •
-            Focused on building practical, real-world applications using Python, data analysis, and backend systems.
+            Recent Master’s graduate in Computer Science •
+            Focused on data analytics, reporting, Python, SQL, Power BI, and practical backend projects.
 
             I enjoy solving everyday problems by turning them into usable products.
           </p>
@@ -776,7 +851,7 @@
       <div class="miniGrid">
         <div class="mini">
           <h3>Headline</h3>
-          <p>Masters in Computer and Information Science || C || Python (pandas, numpy) || SQL || HTML || CSS || Java (fundamentals) || Power BI || GitHub</p>
+          <p>MS in Computer Science || Python (pandas, numpy) || SQL || Power BI || HTML || CSS || Java (fundamentals) || GitHub</p>
         </div>
         <div class="mini">
           <h3>Focus Areas</h3>
@@ -800,23 +875,103 @@ Identify real problems → design solutions → build usable applications → de
         <h2>About</h2>
         <span>Short and verifiable</span>
       </div>
+
       <div class="card full">
         <p style="margin:0;color:var(--muted);">
-<p style="margin:0;color:var(--muted);">
-  I’m <b>Aravind Ganipisetty (He/Him)</b>, a recent <b>Master’s graduate in Computer Science</b>.
-  I am currently searching for <b>Data Analytics</b> and entry level technology roles where I can use
-  <b>Python</b>, <b>SQL</b>, <b>Power BI</b>, <b>pandas</b>, <b>NumPy</b>, and problem solving skills
-  to work with data, build reports, and turn raw information into clear insights.
+          I’m <b>Aravind Ganipisetty (He/Him)</b>, a recent <b>Master’s graduate in Computer Science</b>.
+          I am currently searching for <b>Data Analytics</b> and entry-level technology roles where I can use
+          <b>Python</b>, <b>SQL</b>, <b>Power BI</b>, <b>pandas</b>, <b>NumPy</b>, and problem-solving skills
+          to work with data, build reports, and turn raw information into clear insights.
 
-  I have built practical projects like <b>JobTrack Pro</b>, <b>TaskFlow</b>, <b>PackageStore</b>,
-  and a <b>Face Recognition Attendance System</b>, where I worked with databases, automation,
-  reporting, tracking systems, and real-world user problems.
+          I have built practical projects like <b>JobTrack Pro</b>, <b>TaskFlow</b>, <b>PackageStore</b>,
+          and a <b>Face Recognition Attendance System</b>, where I worked with databases, automation,
+          reporting, tracking systems, and real-world user problems.
 
-  My main focus is data cleaning, analysis, visualization, dashboard development, and business reporting.
-  I am looking for an opportunity where I can contribute to real projects, keep improving my technical skills,
-  and grow as a Data Analyst.
-</p>
+          My main focus is data cleaning, analysis, visualization, dashboard development, and business reporting.
+          I am looking for an opportunity where I can contribute to real projects, keep improving my technical skills,
+          and grow as a Data Analyst.
         </p>
+      </div>
+    </section>
+
+    <!-- education -->
+    <section id="education">
+      <div class="sectionTitle">
+        <h2>Education</h2>
+        <span>My academic background</span>
+      </div>
+
+      <div class="card full">
+        <div class="eduList">
+
+          <div class="eduItem">
+            <div class="eduLogo">UNH</div>
+            <div class="eduMain">
+              <div class="eduTop">
+                <h3 class="eduSchool">University of New Haven</h3>
+                <span class="eduDate">Aug 2024 – May 2026</span>
+              </div>
+              <p class="eduDegree">Master’s degree, Computer Science</p>
+              <p class="eduGrade">Grade: 3.74 / 4.0</p>
+              <div class="tech">
+                <span class="tag">Computer Science</span>
+                <span class="tag">Data Analytics</span>
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Power BI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="eduItem">
+            <div class="eduLogo">VR</div>
+            <div class="eduMain">
+              <div class="eduTop">
+                <h3 class="eduSchool">Velagapudi Ramakrishna Siddhartha Engineering College</h3>
+                <span class="eduDate">Nov 2020 – May 2024</span>
+              </div>
+              <p class="eduDegree">Electronics and Communications Engineering (Majors) and Computer Science Engineering (Minors)</p>
+              <p class="eduGrade">Grade: 9.14 / 10</p>
+              <div class="tech">
+                <span class="tag">Electronics</span>
+                <span class="tag">Computer Science Minor</span>
+                <span class="tag">Python</span>
+                <span class="tag">HTML</span>
+                <span class="tag">Embedded C</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="eduItem">
+            <div class="eduLogo">SB</div>
+            <div class="eduMain">
+              <div class="eduTop">
+                <h3 class="eduSchool">Sri Bavishya Junior College</h3>
+                <span class="eduDate">Sep 2018 – Apr 2020</span>
+              </div>
+              <p class="eduDegree">State Board of Secondary Education, MPC</p>
+              <p class="eduGrade">Grade: 9.94 / 10</p>
+              <div class="tech">
+                <span class="tag">Mathematics</span>
+                <span class="tag">Physics</span>
+                <span class="tag">Chemistry</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="eduItem">
+            <div class="eduLogo">ZP</div>
+            <div class="eduMain">
+              <div class="eduTop">
+                <h3 class="eduSchool">Z.P. High School Ganavaram</h3>
+                <span class="eduDate">Jun 2017 – Apr 2018</span>
+              </div>
+              <p class="eduDegree">SSC</p>
+              <p class="eduGrade">Grade: 9.8 / 10</p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
