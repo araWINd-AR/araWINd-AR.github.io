@@ -1852,12 +1852,12 @@
       </div>
 
       <div class="certActions">
-        <button class="certAction certificate" type="button" data-zoom="cer/Ethical%20Hacker.png">
+        <button class="certAction certificate" type="button" data-zoom="cer/Ethical Hacker.png">
           🧾 Certificate
         </button>
 
         <a class="certAction link"
-           href="cer/Ethical%20Hacker.png"
+           href="cer/Ethical Hacker.png"
            target="_blank"
            rel="noreferrer">
           🔗 Open
@@ -2454,9 +2454,20 @@
       return typeof src === 'string' && src.toLowerCase().endsWith('.pdf');
     }
 
+    function cleanFilePath(src){
+      if (typeof src !== 'string') return src;
+
+      // This keeps normal spaces working and also prevents %20 from becoming %2520.
+      try {
+        return encodeURI(decodeURI(src));
+      } catch (e) {
+        return encodeURI(src);
+      }
+    }
+
     function openLightbox(src){
       // encode file names so spaces work on GitHub Pages
-      const safeSrc = (typeof src === 'string') ? encodeURI(src) : src;
+      const safeSrc = cleanFilePath(src);
 
       if(isPdf(safeSrc)){
         lbImg.style.display = 'none';
