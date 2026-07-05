@@ -1217,6 +1217,69 @@
     </section>
 
           
+
+<!-- Shift Management MVP project -->
+<article id="projects" class="card full">
+  <h3>Shift Management MVP — Enterprise Shift Scheduling Website</h3>
+
+  <div class="meta">
+    <span class="pill">Flask</span>
+    <span class="pill">PostgreSQL</span>
+    <span class="pill">SQLAlchemy</span>
+    <span class="pill">Bootstrap</span>
+    <span class="pill">Workflow Automation</span>
+  </div>
+
+  <p style="margin:0;color:var(--muted);">
+    Shift Management MVP is a web-based scheduling application built to manage manager and employee shift workflows.
+    The project supports location management, shift posting, employee shift requests, manager approval, waitlist backup queue,
+    notifications, audit logs, and workflow-based decision support.
+  </p>
+
+  <ul>
+    <li>Built manager and employee role-based dashboards with secure login, registration, and route protection</li>
+    <li>Added manager functionality to create locations, post shifts, control shift visibility, approve or reject requests, release shifts, and cancel shifts</li>
+    <li>Created employee functionality to complete profile details, view available shifts, request shifts, cancel requests, and cancel assigned shifts</li>
+    <li>Improved the original claim workflow into a request-and-review system so multiple employees can request the same shift without first-click-wins behavior</li>
+    <li>Added workflow score, rank, and recommendation support to help managers review candidates based on department, certifications, license status, employment status, overtime, seniority, performance history, and cancellation history</li>
+    <li>Implemented backup/waitlist logic so other employees are notified and kept in queue when one employee is approved</li>
+    <li>Added employee additional notes so managers can review extra employee background details during shift approval</li>
+    <li>Used PostgreSQL row locking, partial unique indexes, and integrity error handling to reduce race-condition risks during concurrent shift requests</li>
+    <li>Added CSRF protection, audit logging, notifications, database migrations, setup documentation, and deployment-ready configuration</li>
+  </ul>
+
+  <div class="tech">
+    <span class="tag">Python</span>
+    <span class="tag">Flask</span>
+    <span class="tag">PostgreSQL</span>
+    <span class="tag">Flask-Login</span>
+    <span class="tag">Flask-SQLAlchemy</span>
+    <span class="tag">Flask-Migrate</span>
+    <span class="tag">Flask-WTF</span>
+    <span class="tag">Jinja2</span>
+    <span class="tag">Bootstrap</span>
+    <span class="tag">Gunicorn</span>
+    <span class="tag">Render Ready</span>
+  </div>
+
+  <div class="ctaRow" style="margin-top:14px;">
+    <a class="btn primary"
+       href="https://github.com/araWINd-AR/shift_management_mvp"
+       target="_blank"
+       rel="noreferrer">
+       GitHub Repo
+    </a>
+
+    <a class="btn"
+       href="https://www.linkedin.com/in/aravind-ganipisetty/"
+       target="_blank"
+       rel="noreferrer">
+       LinkedIn
+    </a>
+  </div>
+</article>
+<!-- end Shift Management MVP project -->
+
 <article class="card full">
   <h3>TaskFlow — Personal Productivity Website</h3>
 
